@@ -46,6 +46,42 @@
             opacity: 0.9;
         }
 
+        .navbar {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a6570 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-color: white;
+        }
+
+        .nav-link.active {
+            border-bottom-color: white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -146,6 +182,18 @@
         .badge-category {
             background: rgba(33, 128, 141, 0.1);
             color: var(--color-primary);
+        }
+
+        .badge-recurring {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.15) 0%, rgba(255, 193, 7, 0.15) 100%);
+            color: #ff6f00;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         .event-title {
@@ -365,6 +413,14 @@
         <p>Discover What's Happening in Southeast Texas</p>
     </header>
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-link active">📅 Events</a>
+            <a href="/venues" class="nav-link">📍 Venues</a>
+            <a href="/dashboard" class="nav-link">📊 Dashboard</a>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="filters">
             <div class="filter-grid">
@@ -483,20 +539,34 @@
                 return;
             }
 
-            container.innerHTML = events.map(event => `
+            container.innerHTML = events.map(event => {
+                // Check if event is recurring
+                const isRecurring = event.description && event.description.includes('[RECURRING:');
+                let recurringInfo = '';
+
+                if (isRecurring) {
+                    // Extract recurring info: [RECURRING: X occurrences from DATE to DATE]
+                    const match = event.description.match(/\[RECURRING: (\d+) occurrences from ([^\s]+) to ([^\]]+)\]/);
+                    if (match) {
+                        recurringInfo = `<span class="event-badge badge-recurring">🔄 ${match[1]} dates until ${match[3]}</span>`;
+                    }
+                }
+
+                return `
                 <div class="event-card ${event.featured ? 'featured' : ''}" onclick="showEventDetail(${event.id})">
                     ${event.image_url ? `<img src="${event.image_url}" alt="${event.title}" class="event-image">` : '<div class="event-image-placeholder">No Image</div>'}
                     ${event.featured ? '<span class="event-badge badge-featured">⭐ Featured</span>' : ''}
                     <span class="event-badge badge-category">${event.category || 'Event'}</span>
+                    ${recurringInfo}
 
                     <h3 class="event-title">${event.title}</h3>
-                    
+
                     <div class="event-meta">
                         <div class="event-meta-item">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
-                            <span>${formatDate(event.date)}${event.time ? ' • ' + event.time : ''}</span>
+                            <span>${formatDate(event.date)}${isRecurring ? ' (begins)' : ''}${event.time ? ' • ' + event.time : ''}</span>
                         </div>
                         
                         ${event.location ? `
@@ -630,6 +700,27 @@
         document.getElementById('cityFilter').addEventListener('change', filterEvents);
         document.getElementById('categoryFilter').addEventListener('change', filterEvents);
         document.getElementById('searchInput').addEventListener('input', filterEvents);
+
+        // Navigation active state
+        function updateNavbarActive() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+
+                // Check if current path matches
+                if ((currentPath === '/' && href === '/') ||
+                    (currentPath === href) ||
+                    (currentPath.includes('index') && href === '/')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        updateNavbarActive();
+        window.addEventListener('load', updateNavbarActive);
 
         // Initial load
         fetchEvents();
