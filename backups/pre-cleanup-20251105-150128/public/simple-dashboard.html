@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETX Events - Simple Live Dashboard</title>
+    <style>
+        :root {
+            --color-primary: #21808d;
+            --color-bg: #fcfcf9;
+            --color-surface: #fffffd;
+            --color-text: #13343b;
+            --color-text-secondary: #626c71;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-success: #28a745;
+            --color-warning: #ffc107;
+            --color-danger: #dc3545;
+            --color-info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--color-primary);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 0.5rem 0;
+        }
+
+        .section {
+            background: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--color-border);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        th {
+            background: rgba(33, 128, 141, 0.05);
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        tr:hover {
+            background: rgba(33, 128, 141, 0.03);
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            background: var(--color-primary);
+            color: white;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #1d7480;
+        }
+
+        .last-updated {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-top: 1rem;
+        }
+
+        .refresh-controls {
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 SETX Events - Live Dashboard</h1>
+        <p>Real-time monitoring of events and venues</p>
+    </div>
+
+    <div class="container">
+        <div class="refresh-controls">
+            <button class="btn" onclick="loadData()">🔄 Refresh Data</button>
+            <button class="btn" onclick="toggleAutoRefresh()">⏯️ Toggle Auto Refresh</button>
+        </div>
+
+        <div class="dashboard-grid" id="statsGrid">
+            <div class="card">
+                <div class="card-title">Total Events</div>
+                <div class="stat-value" id="totalEvents">-</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Upcoming Events</div>
+                <div class="stat-value" id="upcomingEvents">-</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Total Venues</div>
+                <div class="stat-value" id="totalVenues">-</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Active Venues</div>
+                <div class="stat-value" id="activeVenues">-</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📈 Events by City</h2>
+            <div id="eventsByCityTable">
+                <div>Loading...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📅 Events by Category</h2>
+            <div id="eventsByCategoryTable">
+                <div>Loading...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📋 Recent Events</h2>
+            <div id="recentEventsTable">
+                <div>Loading...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📡 Recent Scraping Activity</h2>
+            <div id="scrapingActivityTable">
+                <div>Loading...</div>
+            </div>
+        </div>
+
+        <div class="last-updated" id="lastUpdated">
+            Last updated: Never
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://100.104.226.70:3001';
+        let autoRefreshInterval = null;
+        let isAutoRefreshEnabled = false;
+
+        function updateLastUpdated() {
+            const now = new Date();
+            document.getElementById('lastUpdated').textContent = 
+                'Last updated: ' + now.toLocaleTimeString();
+        }
+
+        function toggleAutoRefresh() {
+            if (isAutoRefreshEnabled) {
+                clearInterval(autoRefreshInterval);
+                isAutoRefreshEnabled = false;
+                console.log('Auto refresh disabled');
+            } else {
+                autoRefreshInterval = setInterval(loadData, 10000); // Refresh every 10 seconds
+                isAutoRefreshEnabled = true;
+                console.log('Auto refresh enabled');
+            }
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch(`${API_BASE}/api/dashboard/stats`);
+                const stats = await response.json();
+                
+                // Update stat cards
+                document.getElementById('totalEvents').textContent = stats.totalEvents || 0;
+                document.getElementById('upcomingEvents').textContent = stats.upcomingEvents || 0;
+                document.getElementById('totalVenues').textContent = stats.totalVenues || 0;
+                document.getElementById('activeVenues').textContent = stats.activeVenues || 0;
+                
+                // Update events by city table
+                if (stats.eventsByCity && stats.eventsByCity.length > 0) {
+                    const cityTable = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>City</th>
+                                    <th>Event Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${stats.eventsByCity.map(item => `
+                                    <tr>
+                                        <td>${item.city}</td>
+                                        <td>${item.count}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                    document.getElementById('eventsByCityTable').innerHTML = cityTable;
+                } else {
+                    document.getElementById('eventsByCityTable').innerHTML = '<div>No data available</div>';
+                }
+                
+                // Update events by category table
+                if (stats.eventsByCategory && stats.eventsByCategory.length > 0) {
+                    const categoryTable = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Event Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${stats.eventsByCategory.map(item => `
+                                    <tr>
+                                        <td>${item.category}</td>
+                                        <td>${item.count}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                    document.getElementById('eventsByCategoryTable').innerHTML = categoryTable;
+                } else {
+                    document.getElementById('eventsByCategoryTable').innerHTML = '<div>No data available</div>';
+                }
+                
+                // Update recent events table
+                if (stats.recentEvents && stats.recentEvents.length > 0) {
+                    const eventsTable = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                    <th>City</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${stats.recentEvents.slice(0, 10).map(event => `
+                                    <tr>
+                                        <td><strong>${event.title}</strong></td>
+                                        <td>${event.date}</td>
+                                        <td>${event.city}</td>
+                                        <td>${event.category}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                    document.getElementById('recentEventsTable').innerHTML = eventsTable;
+                } else {
+                    document.getElementById('recentEventsTable').innerHTML = '<div>No events found</div>';
+                }
+                
+                // Update scraping activity table
+                if (stats.recentScrapes && stats.recentScrapes.length > 0) {
+                    const scrapeTable = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Source</th>
+                                    <th>Events Found</th>
+                                    <th>Status</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${stats.recentScrapes.map(scrape => `
+                                    <tr>
+                                        <td>${scrape.source}</td>
+                                        <td>${scrape.events_found}</td>
+                                        <td>${scrape.status}</td>
+                                        <td>${new Date(scrape.scraped_at).toLocaleTimeString()}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                    document.getElementById('scrapingActivityTable').innerHTML = scrapeTable;
+                } else {
+                    document.getElementById('scrapingActivityTable').innerHTML = '<div>No scraping activity</div>';
+                }
+                
+                updateLastUpdated();
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                alert('Failed to load data. Please check if the API server is running.');
+            }
+        }
+
+        // Load data on page load
+        loadData();
+    </script>
+</body>
+</html>

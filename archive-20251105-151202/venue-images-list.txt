@@ -1,0 +1,32 @@
+total 3992
+drwxrwxr-x 2 sauly sauly   4096 Nov  3 00:15 .
+drwxrwxr-x 3 sauly sauly   4096 Nov  2 17:19 ..
+-rw-rw-r-- 1 sauly sauly 273802 Nov  2 23:58 venue-1.jpg
+-rw-rw-r-- 1 sauly sauly  20359 Nov  3 00:08 venue-10.jpg
+-rw-rw-r-- 1 sauly sauly  28537 Nov  2 23:38 venue-11.jpg
+-rw-rw-r-- 1 sauly sauly  17221 Nov  2 23:50 venue-12.jpg
+-rw-rw-r-- 1 sauly sauly  41040 Nov  2 23:38 venue-13.jpg
+-rw-rw-r-- 1 sauly sauly  29079 Nov  2 23:38 venue-16.jpg
+-rw-rw-r-- 1 sauly sauly 842381 Nov  2 23:51 venue-17.jpg
+-rw-rw-r-- 1 sauly sauly 127161 Nov  2 23:52 venue-21.jpg
+-rw-rw-r-- 1 sauly sauly  27848 Nov  2 23:52 venue-22.jpg
+-rw-rw-r-- 1 sauly sauly  34982 Nov  3 00:08 venue-23.jpg
+-rw-rw-r-- 1 sauly sauly  27848 Nov  2 23:53 venue-24.jpg
+-rw-rw-r-- 1 sauly sauly  27848 Nov  2 23:53 venue-25.jpg
+-rw-rw-r-- 1 sauly sauly  61398 Nov  2 23:44 venue-3.jpg
+-rw-rw-r-- 1 sauly sauly 115372 Nov  2 23:55 venue-32.jpg
+-rw-rw-r-- 1 sauly sauly  32315 Nov  2 23:41 venue-34.jpg
+-rw-rw-r-- 1 sauly sauly  32315 Nov  2 23:41 venue-35.jpg
+-rw-rw-r-- 1 sauly sauly  32315 Nov  2 23:41 venue-36.jpg
+-rw-rw-r-- 1 sauly sauly  31146 Nov  3 00:08 venue-4.jpg
+-rw-rw-r-- 1 sauly sauly  52684 Nov  3 00:15 venue-40.jpg
+-rw-rw-r-- 1 sauly sauly 241162 Nov  2 23:43 venue-43.jpg
+-rw-rw-r-- 1 sauly sauly 842381 Nov  2 23:58 venue-46.jpg
+-rw-rw-r-- 1 sauly sauly 442685 Nov  2 23:43 venue-47.jpg
+-rw-rw-r-- 1 sauly sauly      0 Nov  2 23:58 venue-48.jpg
+-rw-rw-r-- 1 sauly sauly 406087 Nov  2 23:44 venue-52.jpg
+-rw-rw-r-- 1 sauly sauly 143562 Nov  2 23:44 venue-53.jpg
+-rw-rw-r-- 1 sauly sauly  22698 Nov  3 00:08 venue-7.jpg
+-rw-rw-r-- 1 sauly sauly  45103 Nov  3 00:08 venue-8.jpg
+-rw-rw-r-- 1 sauly sauly  29079 Nov  2 23:37 venue-9.jpg
+Generated at: Mon Nov  3 00:40:01 CST 2025

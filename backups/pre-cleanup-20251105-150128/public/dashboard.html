@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SETX Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 20px;
+            border: none;
+            background: white;
+            color: #666;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-btn:hover {
+            color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .table-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f9f9f9;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+            font-weight: 600;
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            width: 90%;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .modal-header h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
+            }
+
+            .table-controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎛️ SETX Events Admin Dashboard</h1>
+        <p>Manage venues and events for Southeast Texas</p>
+    </div>
+
+    <div class="container">
+        <!-- Stats -->
+        <div class="stats-grid" id="stats"></div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('venues')">📍 Venues</button>
+            <button class="tab-btn" onclick="switchTab('events')">📅 Events</button>
+        </div>
+
+        <!-- Venues Tab -->
+        <div id="venues-tab" class="tab-content active">
+            <div class="card">
+                <h2>Manage Venues</h2>
+                <div class="table-controls">
+                    <input type="text" class="search-box" id="venueSearch" placeholder="Search venues...">
+                    <button class="btn btn-primary" onclick="openVenueModal()">+ Add Venue</button>
+                </div>
+                <table id="venuesTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Phone</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="venuesList"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Events Tab -->
+        <div id="events-tab" class="tab-content">
+            <div class="card">
+                <h2>Manage Events</h2>
+                <div class="table-controls">
+                    <input type="text" class="search-box" id="eventSearch" placeholder="Search events...">
+                    <button class="btn btn-primary" onclick="openEventModal()">+ Add Event</button>
+                </div>
+                <table id="eventsTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>City</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventsList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Venue Modal -->
+    <div id="venueModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="venueModalTitle">Add Venue</h3>
+            </div>
+            <form id="venueForm">
+                <div class="form-group">
+                    <label>Venue Name</label>
+                    <input type="text" id="venueName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <select id="venueCity" required>
+                            <option value="">Select City</option>
+                            <option value="Beaumont">Beaumont</option>
+                            <option value="Port Arthur">Port Arthur</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Nederland">Nederland</option>
+                            <option value="Vidor">Vidor</option>
+                            <option value="Silsbee">Silsbee</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" id="venueCategory" placeholder="e.g., Theater, Music Venue">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" id="venuePhone">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="venueEmail">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" id="venueAddress">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Website</label>
+                        <input type="url" id="venueWebsite" placeholder="https://...">
+                    </div>
+                    <div class="form-group">
+                        <label>Facebook URL</label>
+                        <input type="url" id="venueFacebook" placeholder="https://facebook.com/...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="venueDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Cover Image URL</label>
+                    <input type="url" id="venueCoverImage" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label>Logo Image URL</label>
+                    <input type="url" id="venueLogoImage" placeholder="https://...">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeVenueModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Venue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="eventModalTitle">Add Event</h3>
+            </div>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label>Event Title</label>
+                    <input type="text" id="eventTitle" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" id="eventTime">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <select id="eventCity" required>
+                            <option value="">Select City</option>
+                            <option value="Beaumont">Beaumont</option>
+                            <option value="Port Arthur">Port Arthur</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Nederland">Nederland</option>
+                            <option value="Vidor">Vidor</option>
+                            <option value="Silsbee">Silsbee</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" id="eventCategory" placeholder="e.g., Music, Theater">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="eventLocation" placeholder="Venue name">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" id="eventPrice" placeholder="e.g., $25, Free">
+                    </div>
+                    <div class="form-group">
+                        <label>Age Restriction</label>
+                        <input type="text" id="eventAgeRestriction" placeholder="e.g., 18+, All ages">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="eventDescription"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ticket URL</label>
+                        <input type="url" id="eventTicketUrl" placeholder="https://...">
+                    </div>
+                    <div class="form-group">
+                        <label>Image URL</label>
+                        <input type="url" id="eventImageUrl" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeEventModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let allVenues = [];
+        let allEvents = [];
+        let currentVenueId = null;
+        let currentEventId = null;
+
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/admin/stats');
+                const stats = await response.json();
+
+                document.getElementById('stats').innerHTML = `
+                    <div class="stat-card">
+                        <div class="stat-label">Total Venues</div>
+                        <div class="stat-value">${stats.activeVenues || 0}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Total Events</div>
+                        <div class="stat-value">${stats.totalEvents || 0}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Upcoming Events</div>
+                        <div class="stat-value">${stats.upcomingEvents || 0}</div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        async function loadVenues() {
+            try {
+                const response = await fetch('/api/venues');
+                allVenues = Array.isArray(response) ? response : (await response.json());
+                renderVenues(allVenues);
+            } catch (error) {
+                console.error('Error loading venues:', error);
+            }
+        }
+
+        function renderVenues(venues) {
+            const tbody = document.getElementById('venuesList');
+            if (venues.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="no-data">No venues found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = venues.map(venue => `
+                <tr>
+                    <td><strong>${venue.name}</strong></td>
+                    <td>${venue.city}</td>
+                    <td>${venue.phone || '-'}</td>
+                    <td>${venue.category || '-'}</td>
+                    <td><span class="status-badge ${venue.is_active ? 'status-active' : 'status-inactive'}">${venue.is_active ? 'Active' : 'Inactive'}</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn btn-small" onclick="editVenue(${venue.id})">Edit</button>
+                            <button class="btn btn-danger btn-small" onclick="deleteVenue(${venue.id})">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function loadEvents() {
+            try {
+                const response = await fetch('/api/events');
+                allEvents = Array.isArray(response) ? response : (await response.json());
+                renderEvents(allEvents);
+            } catch (error) {
+                console.error('Error loading events:', error);
+            }
+        }
+
+        function renderEvents(events) {
+            const tbody = document.getElementById('eventsList');
+            if (events.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="no-data">No events found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = events.map(event => `
+                <tr>
+                    <td><strong>${event.title}</strong></td>
+                    <td>${new Date(event.date).toLocaleDateString()}</td>
+                    <td>${event.city}</td>
+                    <td>${event.category || '-'}</td>
+                    <td>${event.price || '-'}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn btn-small" onclick="editEvent(${event.id})">Edit</button>
+                            <button class="btn btn-danger btn-small" onclick="deleteEvent(${event.id})">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            event.target.classList.add('active');
+            document.getElementById(tab + '-tab').classList.add('active');
+        }
+
+        function openVenueModal(id = null) {
+            currentVenueId = id;
+            document.getElementById('venueModalTitle').textContent = id ? 'Edit Venue' : 'Add Venue';
+            document.getElementById('venueForm').reset();
+            document.getElementById('venueModal').classList.add('active');
+
+            if (id) {
+                const venue = allVenues.find(v => v.id === id);
+                if (venue) {
+                    document.getElementById('venueName').value = venue.name;
+                    document.getElementById('venueCity').value = venue.city;
+                    document.getElementById('venueCategory').value = venue.category || '';
+                    document.getElementById('venuePhone').value = venue.phone || '';
+                    document.getElementById('venueEmail').value = venue.email || '';
+                    document.getElementById('venueAddress').value = venue.address || '';
+                    document.getElementById('venueWebsite').value = venue.website || '';
+                    document.getElementById('venueFacebook').value = venue.facebook_url || '';
+                    document.getElementById('venueDescription').value = venue.description || '';
+                    document.getElementById('venueCoverImage').value = venue.cover_image_url || '';
+                    document.getElementById('venueLogoImage').value = venue.logo_url || '';
+                }
+            }
+        }
+
+        function closeVenueModal() {
+            document.getElementById('venueModal').classList.remove('active');
+        }
+
+        function openEventModal(id = null) {
+            currentEventId = id;
+            document.getElementById('eventModalTitle').textContent = id ? 'Edit Event' : 'Add Event';
+            document.getElementById('eventForm').reset();
+            document.getElementById('eventModal').classList.add('active');
+
+            if (id) {
+                const event = allEvents.find(e => e.id === id);
+                if (event) {
+                    document.getElementById('eventTitle').value = event.title;
+                    document.getElementById('eventDate').value = event.date;
+                    document.getElementById('eventTime').value = event.time || '';
+                    document.getElementById('eventCity').value = event.city;
+                    document.getElementById('eventCategory').value = event.category || '';
+                    document.getElementById('eventLocation').value = event.location || '';
+                    document.getElementById('eventPrice').value = event.price || '';
+                    document.getElementById('eventAgeRestriction').value = event.age_restriction || '';
+                    document.getElementById('eventDescription').value = event.description || '';
+                    document.getElementById('eventTicketUrl').value = event.ticket_url || '';
+                    document.getElementById('eventImageUrl').value = event.image_url || '';
+                }
+            }
+        }
+
+        function closeEventModal() {
+            document.getElementById('eventModal').classList.remove('active');
+        }
+
+        async function editVenue(id) {
+            openVenueModal(id);
+        }
+
+        async function deleteVenue(id) {
+            if (confirm('Are you sure you want to delete this venue?')) {
+                try {
+                    await fetch(`/api/venues/${id}`, { method: 'DELETE' });
+                    loadVenues();
+                    loadStats();
+                } catch (error) {
+                    console.error('Error deleting venue:', error);
+                }
+            }
+        }
+
+        async function editEvent(id) {
+            openEventModal(id);
+        }
+
+        async function deleteEvent(id) {
+            if (confirm('Are you sure you want to delete this event?')) {
+                try {
+                    await fetch(`/api/events/${id}`, { method: 'DELETE' });
+                    loadEvents();
+                    loadStats();
+                } catch (error) {
+                    console.error('Error deleting event:', error);
+                }
+            }
+        }
+
+        // Form submissions
+        document.getElementById('venueForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById('venueName').value,
+                city: document.getElementById('venueCity').value,
+                category: document.getElementById('venueCategory').value,
+                phone: document.getElementById('venuePhone').value,
+                email: document.getElementById('venueEmail').value,
+                address: document.getElementById('venueAddress').value,
+                website: document.getElementById('venueWebsite').value,
+                facebook_url: document.getElementById('venueFacebook').value,
+                description: document.getElementById('venueDescription').value,
+                cover_image_url: document.getElementById('venueCoverImage').value,
+                logo_url: document.getElementById('venueLogoImage').value
+            };
+
+            try {
+                const method = currentVenueId ? 'PUT' : 'POST';
+                const url = currentVenueId ? `/api/venues/${currentVenueId}` : '/api/venues';
+                await fetch(url, { method, body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } });
+                closeVenueModal();
+                loadVenues();
+                loadStats();
+            } catch (error) {
+                console.error('Error saving venue:', error);
+            }
+        });
+
+        document.getElementById('eventForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                title: document.getElementById('eventTitle').value,
+                date: document.getElementById('eventDate').value,
+                time: document.getElementById('eventTime').value,
+                city: document.getElementById('eventCity').value,
+                location: document.getElementById('eventLocation').value,
+                category: document.getElementById('eventCategory').value,
+                price: document.getElementById('eventPrice').value,
+                age_restriction: document.getElementById('eventAgeRestriction').value,
+                description: document.getElementById('eventDescription').value,
+                ticket_url: document.getElementById('eventTicketUrl').value,
+                image_url: document.getElementById('eventImageUrl').value
+            };
+
+            try {
+                const method = currentEventId ? 'PUT' : 'POST';
+                const url = currentEventId ? `/api/events/${currentEventId}` : '/api/events';
+                await fetch(url, { method, body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } });
+                closeEventModal();
+                loadEvents();
+                loadStats();
+            } catch (error) {
+                console.error('Error saving event:', error);
+            }
+        });
+
+        // Search
+        document.getElementById('venueSearch').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = allVenues.filter(v => v.name.toLowerCase().includes(term));
+            renderVenues(filtered);
+        });
+
+        document.getElementById('eventSearch').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = allEvents.filter(ev => ev.title.toLowerCase().includes(term));
+            renderEvents(filtered);
+        });
+
+        // Close modals on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target.id === 'venueModal') closeVenueModal();
+            if (e.target.id === 'eventModal') closeEventModal();
+        });
+
+        // Load data on page load
+        window.addEventListener('load', () => {
+            loadStats();
+            loadVenues();
+            loadEvents();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+1|Julie Rogers Theatre|/images/venues/venue-1.jpg
+3|Museum of the Gulf Coast|/images/venues/venue-3.jpg
+4|Beaumont Botanical Gardens|/images/venues/venue-4.jpg
+7|Julie Rogers Theatre|/images/venues/venue-7.jpg
+8|Jefferson Theatre|/images/venues/venue-8.jpg
+9|Downtown Event Centre|/images/venues/venue-9.jpg
+10|Art Museum of Southeast Texas|/images/venues/venue-10.jpg
+11|Ford Park Entertainment Complex|/images/venues/venue-11.jpg
+12|The Venue at Belle Oaks|/images/venues/venue-12.jpg
+13|Be308|/images/venues/venue-13.jpg
+16|Cattail Marsh Scenic Wetlands & Boardwalk|/images/venues/venue-16.jpg
+17|Holiday Inn Beaumont|/images/venues/venue-17.jpg
+21|Holiday Inn Port Arthur - Park Central|/images/venues/venue-21.jpg
+22|Bowers Civic Center|/images/venues/venue-22.jpg
+23|Rose Hill Manor|/images/venues/venue-23.jpg
+24|Port Arthur Public Library|/images/venues/venue-24.jpg
+25|Port Arthur Civic Center|/images/venues/venue-25.jpg
+32|Ramada Inn Port Arthur|/images/venues/venue-32.jpg
+34|Riverfront Boardwalk and Pavilion|/images/venues/venue-34.jpg
+35|Riverside Pavilion|/images/venues/venue-35.jpg
+36|City of Orange Boat Ramp|/images/venues/venue-36.jpg
+40|Angel Gardens|/images/venues/venue-40.jpg
+43|The Brown Estate - Lamar State College Orange|/images/venues/venue-43.jpg
+46|Holiday Inn Port Arthur - Park Central|/images/venues/venue-46.jpg
+47|Evergreen Event Center|/images/venues/venue-47.jpg
+48|The Plaza Event Center|/images/venues/venue-48.jpg
+52|The Foundry Venue|/images/venues/venue-52.jpg
+53|Whispering Pines Event Center|/images/venues/venue-53.jpg

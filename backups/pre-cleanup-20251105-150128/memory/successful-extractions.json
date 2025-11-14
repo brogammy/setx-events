@@ -1,0 +1,1118 @@
+[
+  {
+    "timestamp": "2025-11-02T12:19:33.333Z",
+    "agent": "perplexity",
+    "venueId": 1,
+    "venueName": "Julie Rogers Theatre",
+    "event": {
+      "title": "Scarface Unplugged & Personal: Tiny Desk Show Performance",
+      "date": "2025-11-07",
+      "time": "8:30 PM",
+      "location": "Julie Rogers Theatre",
+      "city": "Beaumont",
+      "category": "Performing Arts",
+      "description": "Acclaimed Tiny Desk Show Performance by Scarface, rescheduled from October 17, 2025.",
+      "source_url": "https://www.julierogerstheatre.com/",
+      "price": "From $97",
+      "ticket_url": "https://www.axs.com/events/1151737"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:33.523Z",
+    "agent": "perplexity",
+    "venueId": 1,
+    "venueName": "Julie Rogers Theatre",
+    "event": {
+      "title": "Symphony Concert – Beyond Boundaries: Beethoven Reimagined",
+      "date": "2025-11-15",
+      "time": "7:30 PM",
+      "location": "Julie Rogers Theatre",
+      "city": "Beaumont",
+      "category": "Performing Arts",
+      "description": "Symphony concert featuring a reimagined Beethoven performance. Seating is reserved on a first-come, first-served basis.",
+      "source_url": "https://beaumonteventstx.com/event/symphony-concert-beyond-boundaries-beethoven-reimagined/",
+      "price": "Not specified",
+      "ticket_url": "http://www.sost.org"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:33.690Z",
+    "agent": "perplexity",
+    "venueId": 1,
+    "venueName": "Julie Rogers Theatre",
+    "event": {
+      "title": "Symphony Concert – A Holiday Spectacular!",
+      "date": "2025-12-07",
+      "time": "Doors 7:00 PM, Show 7:30 PM",
+      "location": "Julie Rogers Theatre",
+      "city": "Beaumont",
+      "category": "Performing Arts",
+      "description": "Holiday-themed symphony concert with reserved seating on a first-come, first-served basis.",
+      "source_url": "https://beaumonteventstx.com/venue/julie-rogers-theatre/",
+      "price": "Not specified",
+      "ticket_url": "http://www.sost.org"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:41.384Z",
+    "agent": "perplexity",
+    "venueId": 2,
+    "venueName": "The Logon Cafe",
+    "event": {
+      "title": "Saturday Brunch",
+      "date": "2025-11-08",
+      "time": "11:00 AM - 2:00 PM",
+      "location": "The Logon Cafe",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Enjoy brunch with options like Big Booty Biscuit with sausage gravy, Eggs Benedict, French toast stuffed with an egg over easy, Crab Cake Florentine paired with a Mimosa or a Bloody Mary.",
+      "source_url": "https://logoncafe.net/venue/819/",
+      "price": "Not specified",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:41.539Z",
+    "agent": "perplexity",
+    "venueId": 2,
+    "venueName": "The Logon Cafe",
+    "event": {
+      "title": "Saturday Brunch",
+      "date": "2025-11-15",
+      "time": "11:00 AM - 2:00 PM",
+      "location": "The Logon Cafe",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Enjoy brunch with options like Big Booty Biscuit with sausage gravy, Eggs Benedict, French toast stuffed with an egg over easy, Crab Cake Florentine paired with a Mimosa or a Bloody Mary.",
+      "source_url": "https://logoncafe.net/venue/819/",
+      "price": "Not specified",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:41.674Z",
+    "agent": "perplexity",
+    "venueId": 2,
+    "venueName": "The Logon Cafe",
+    "event": {
+      "title": "Let the Logon make you Brunch today",
+      "date": "2025-11-09",
+      "time": "11:00 AM - 2:00 PM",
+      "location": "The Logon Cafe",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Brunch event at The Logon Cafe.",
+      "source_url": "https://logoncafe.net/event/let-the-logon-make-you-brunch-today-10/",
+      "price": "Not specified",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:41.864Z",
+    "agent": "perplexity",
+    "venueId": 2,
+    "venueName": "The Logon Cafe",
+    "event": {
+      "title": "Southeast Texas BeeKeepers Meeting",
+      "date": "2025-11-03",
+      "time": "Not specified",
+      "location": "The Logon Cafe",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Meeting of the Southeast Texas BeeKeepers at The Logon Cafe and Pub.",
+      "source_url": "https://logoncafe.net/events/month/2025-11/",
+      "price": "Not specified",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:42.076Z",
+    "agent": "perplexity",
+    "venueId": 2,
+    "venueName": "The Logon Cafe",
+    "event": {
+      "title": "Open Mic Night",
+      "date": "2025-11-19",
+      "time": "8:00 PM - 11:00 PM",
+      "location": "The Logon Cafe",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Open Mic Night event at The Logon Cafe.",
+      "source_url": "https://logoncafe.net/event/open-mic-night-51/2025-11-19/",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:47.837Z",
+    "agent": "perplexity",
+    "venueId": 3,
+    "venueName": "Museum of the Gulf Coast",
+    "event": {
+      "title": "Exhibit on Display in the Dunn Gallery",
+      "date": "2025-09-27 to 2025-12-29",
+      "time": "Museum hours 9:00 AM - 5:00 PM",
+      "location": "Museum of the Gulf Coast",
+      "city": "Port Arthur",
+      "category": "Museum",
+      "description": "Exhibit featuring the history of Port Arthur captured in black-and-white images from the Museum's collections, including ten-foot panoramics of early Port Arthur and original prints by Frank Trost and other photographers.",
+      "source_url": "https://www.museumofthegulfcoast.org/events",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:48.028Z",
+    "agent": "perplexity",
+    "venueId": 3,
+    "venueName": "Museum of the Gulf Coast",
+    "event": {
+      "title": "Opening Reception for Exhibit in the Dunn Gallery",
+      "date": "2025-06-27",
+      "time": "6:00 PM - 8:00 PM",
+      "location": "Museum of the Gulf Coast",
+      "city": "Port Arthur",
+      "category": "Museum",
+      "description": "Opening reception celebrating the history of Port Arthur with black-and-white images from the Museum's collections. Includes light hors d'oeuvres and wine. Open to all ages.",
+      "source_url": "https://www.museumofthegulfcoast.org/events",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:48.631Z",
+    "agent": "perplexity",
+    "venueId": 3,
+    "venueName": "Museum of the Gulf Coast",
+    "event": {
+      "title": "2025 Gulf Coast Gala",
+      "date": "2025 (specific date not provided)",
+      "time": "Starts at 5:30 PM",
+      "location": "Museum of the Gulf Coast",
+      "city": "Port Arthur",
+      "category": "Museum Gala",
+      "description": "Premier event featuring rare bourbon flights, signature cocktails, craft beer, diamond jewelry raffle, silent auction, elegant dinner, and musical entertainment at The LIGHTHOUSE Bar & SEAWALL Bar.",
+      "source_url": "https://www.museumofthegulfcoast.org/gala",
+      "price": "Not specified",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:57.112Z",
+    "agent": "perplexity",
+    "venueId": 5,
+    "venueName": "Beaumont Civic Centre",
+    "event": {
+      "title": "William Lee Martin: The Funny Life Tour",
+      "date": "2025-11-08",
+      "time": "Doors 6:30 PM, Show 7:30 PM",
+      "location": "Beaumont Civic Centre",
+      "city": "Beaumont",
+      "category": "Convention Center",
+      "description": "Comedy show featuring William Lee Martin. Ticket prices range from $20 to $45 (taxes and fees not included).",
+      "source_url": "https://www.beaumonttexas.gov/234/Beaumont-Events",
+      "price": "$20 - $45",
+      "ticket_url": null
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:57.290Z",
+    "agent": "perplexity",
+    "venueId": 5,
+    "venueName": "Beaumont Civic Centre",
+    "event": {
+      "title": "Symphony Concert \"Beyond Boundaries: Beethoven Reimagined\"",
+      "date": "2025-11-15",
+      "time": "7:30 PM",
+      "location": "Beaumont Civic Centre",
+      "city": "Beaumont",
+      "category": "Convention Center",
+      "description": "Symphony concert reimagining Beethoven's works. Seating is reserved on a first-come, first-served basis.",
+      "source_url": "https://beaumonteventstx.com/event/symphony-concert-beyond-boundaries-beethoven-reimagined/",
+      "price": null,
+      "ticket_url": "http://www.sost.org"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:19:57.482Z",
+    "agent": "perplexity",
+    "venueId": 5,
+    "venueName": "Beaumont Civic Centre",
+    "event": {
+      "title": "Lamar University Wind Ensemble and Symphonic Band",
+      "date": "2025-11-20",
+      "time": "Doors 7:00 PM, Show 7:30 PM",
+      "location": "Beaumont Civic Centre",
+      "city": "Beaumont",
+      "category": "Convention Center",
+      "description": "Free concert featuring Lamar University Wind Ensemble and Symphonic Band.",
+      "source_url": "https://www.beaumonttexas.gov/234/Beaumont-Events",
+      "price": "Free",
+      "ticket_url": "https://beaumonteventstx.com/event/lamar-university-wind-ensemble-and-symphonic-band/"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:12.591Z",
+    "agent": "perplexity",
+    "venueId": 8,
+    "venueName": "Jefferson Theatre",
+    "event": {
+      "title": "Classic Movie Night: It's a Wonderful Life - Beaumont",
+      "date": "2025-11-14",
+      "time": "7:00 PM",
+      "location": "Jefferson Theatre",
+      "city": "Beaumont",
+      "category": "Theater",
+      "description": "Screening of the classic movie 'It's a Wonderful Life' with special lobby appearances.",
+      "source_url": "https://www.axs.com/events/1208405",
+      "price": "$12-$18",
+      "ticket_url": "https://www.axs.com/events/1208405"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:12.737Z",
+    "agent": "perplexity",
+    "venueId": 8,
+    "venueName": "Jefferson Theatre",
+    "event": {
+      "title": "Elf In Concert - Beaumont",
+      "date": "2025-12-19",
+      "time": "7:00 PM",
+      "location": "Jefferson Theatre",
+      "city": "Beaumont",
+      "category": "Theater",
+      "description": "A live concert performance of the holiday favorite 'Elf'.",
+      "source_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets",
+      "price": "$18",
+      "ticket_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:12.882Z",
+    "agent": "perplexity",
+    "venueId": 8,
+    "venueName": "Jefferson Theatre",
+    "event": {
+      "title": "The Polar Express - Beaumont",
+      "date": "2025-12-20",
+      "time": "2:00 PM",
+      "location": "Jefferson Theatre",
+      "city": "Beaumont",
+      "category": "Theater",
+      "description": "A theatrical presentation of the beloved holiday story 'The Polar Express'.",
+      "source_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets",
+      "price": "$18",
+      "ticket_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:13.028Z",
+    "agent": "perplexity",
+    "venueId": 8,
+    "venueName": "Jefferson Theatre",
+    "event": {
+      "title": "Henry Cho",
+      "date": "2026-02-28",
+      "time": "8:00 PM",
+      "location": "Jefferson Theatre",
+      "city": "Beaumont",
+      "category": "Comedy",
+      "description": "Stand-up comedy show featuring Henry Cho.",
+      "source_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets",
+      "price": "$69",
+      "ticket_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:13.184Z",
+    "agent": "perplexity",
+    "venueId": 8,
+    "venueName": "Jefferson Theatre",
+    "event": {
+      "title": "Whose Live Anyway?",
+      "date": "2026-03-14",
+      "time": "7:30 PM",
+      "location": "Jefferson Theatre",
+      "city": "Beaumont",
+      "category": "Comedy",
+      "description": "An improvisational comedy show based on the TV show 'Whose Line Is It Anyway?'.",
+      "source_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets",
+      "price": "$104",
+      "ticket_url": "https://www.seatgeek.com/venues/jefferson-theatre/tickets"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:20.219Z",
+    "agent": "perplexity",
+    "venueId": 9,
+    "venueName": "Downtown Event Centre",
+    "event": {
+      "title": "City of Beaumont Tree Lighting 2025",
+      "date": "2025-12-03",
+      "time": "5:00 PM – 7:30 PM",
+      "location": "Downtown Event Centre",
+      "city": "Beaumont",
+      "category": "Event Hall",
+      "description": "Annual tree lighting event with food vendors and festivities.",
+      "source_url": "https://beaumonteventstx.com/venue/downtown-event-centre/",
+      "price": null,
+      "ticket_url": null
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:27.158Z",
+    "agent": "perplexity",
+    "venueId": 11,
+    "venueName": "Ford Park Entertainment Complex",
+    "event": {
+      "title": "Food Truck Mania",
+      "date": "2025-11-08",
+      "time": "TBD",
+      "location": "Ford Park Entertainment Complex",
+      "city": "Beaumont",
+      "category": "Entertainment Complex",
+      "description": "An event featuring a variety of food trucks offering diverse cuisines and live entertainment.",
+      "source_url": "https://concerts.consequence.net/events/-at-doggett-ford-park-on-2025-11-08-11-00",
+      "price": "TBD",
+      "ticket_url": "https://concerts.consequence.net/events/-at-doggett-ford-park-on-2025-11-08-11-00"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:27.503Z",
+    "agent": "perplexity",
+    "venueId": 11,
+    "venueName": "Ford Park Entertainment Complex",
+    "event": {
+      "title": "SCA Battle of the Lone Star Championship",
+      "date": "2025-11-15",
+      "time": "TBD",
+      "location": "Ford Park Entertainment Complex",
+      "city": "Beaumont",
+      "category": "Entertainment Complex",
+      "description": "A championship event hosted by the Society for Creative Anachronism featuring medieval combat and related activities.",
+      "source_url": "https://www.doggettfordpark.com/events",
+      "price": "TBD",
+      "ticket_url": "https://www.doggettfordpark.com/events"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:28.095Z",
+    "agent": "perplexity",
+    "venueId": 11,
+    "venueName": "Ford Park Entertainment Complex",
+    "event": {
+      "title": "Mannheim Steamroller Christmas by Chip Davis",
+      "date": "2025-12-29",
+      "time": "TBD",
+      "location": "Ford Park Entertainment Complex",
+      "city": "Beaumont",
+      "category": "Entertainment Complex",
+      "description": "A holiday concert featuring Mannheim Steamroller Christmas music performed by Chip Davis.",
+      "source_url": "https://www.doggettfordpark.com/events",
+      "price": "TBD",
+      "ticket_url": "https://www.doggettfordpark.com/events"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:36.440Z",
+    "agent": "perplexity",
+    "venueId": 22,
+    "venueName": "Bowers Civic Center",
+    "event": {
+      "title": "Port Arthur Education Foundation \"BACK TO THE 80's\"",
+      "date": "2025-11-06",
+      "time": "06:00 PM",
+      "location": "Bowers Civic Center",
+      "city": "Port Arthur",
+      "category": "Convention Center / Civic Center",
+      "description": "A themed event hosted by the Port Arthur Education Foundation celebrating the 1980s.",
+      "source_url": "https://allevents.in/port-arthur/port-arthur-education-foundation-back-to-the-80s/200028647679921",
+      "price": "Available on registration",
+      "ticket_url": "https://allevents.in/port-arthur/port-arthur-education-foundation-back-to-the-80s/200028647679921"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:36.686Z",
+    "agent": "perplexity",
+    "venueId": 22,
+    "venueName": "Bowers Civic Center",
+    "event": {
+      "title": "PCRMM Annual Gala",
+      "date": "2026-06-06",
+      "time": "06:00 PM",
+      "location": "Bowers Civic Center",
+      "city": "Port Arthur",
+      "category": "Convention Center / Civic Center",
+      "description": "Annual gala event hosted by the Port City Railroad Museum.",
+      "source_url": "https://allevents.in/port-arthur/pcrmm-annual-gala/200028807660437",
+      "price": "Not specified",
+      "ticket_url": "https://allevents.in/port-arthur/pcrmm-annual-gala/200028807660437"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:44.127Z",
+    "agent": "perplexity",
+    "venueId": 25,
+    "venueName": "Port Arthur Civic Center",
+    "event": {
+      "title": "PA TLOD 60th Anniversary",
+      "date": "2025-11-01",
+      "time": "06:00 PM",
+      "location": "Port Arthur Civic Center",
+      "city": "Port Arthur",
+      "category": "Convention Center / Civic Center",
+      "description": "Celebration of the 60th Anniversary of PA TLOD at the Robert A. (Bob) Bower Civic Center.",
+      "source_url": "https://allevents.in/port-arthur/pa-tlod-60th-anniversary/200028183602929",
+      "price": "Price information available on event page",
+      "ticket_url": "https://allevents.in/port-arthur/pa-tlod-60th-anniversary/200028183602929"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:44.340Z",
+    "agent": "perplexity",
+    "venueId": 25,
+    "venueName": "Port Arthur Civic Center",
+    "event": {
+      "title": "City Council Regular Meeting",
+      "date": "2025-11-04",
+      "time": "09:30 AM",
+      "location": "Port Arthur Civic Center",
+      "city": "Port Arthur",
+      "category": "Convention Center / Civic Center",
+      "description": "Regular City Council meeting held at the Bowers Civic Center.",
+      "source_url": "https://www.portarthurtx.gov/calendar.aspx?view=list&year=2025&month=11&day=4",
+      "price": "Free",
+      "ticket_url": "https://www.portarthurtx.gov/calendar.aspx?view=list&year=2025&month=11&day=4"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:47.669Z",
+    "agent": "perplexity",
+    "venueId": 41,
+    "venueName": "Shangri La Botanical Gardens & Nature Center",
+    "event": {
+      "title": "Christmas Strolls",
+      "date": "2025-12-02 to 2025-12-20",
+      "time": "6:00 PM to 9:30 PM (last entry 8:30 PM)",
+      "location": "Shangri La Botanical Gardens & Nature Center",
+      "city": "Orange",
+      "category": "Botanical Garden / Cultural Center",
+      "description": "Evening holiday light strolls featuring festive decorations. Tickets required for all children and for Senior, Mobility Friendly & Sensitivity Hour. Tickets available for pre-purchase starting November 17, 2025.",
+      "source_url": "https://shangrilagardens.org/know-before-you-stroll/",
+      "price": "Children $1 + processing fee (pre-purchase), $5 + processing fee (walk-up); infants free",
+      "ticket_url": "https://shangrilagardens.org"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:20:55.693Z",
+    "agent": "perplexity",
+    "venueId": 49,
+    "venueName": "The Oaks Event Center",
+    "event": {
+      "title": "Ryan Foret & Foret Tradition",
+      "date": "2025-11-21",
+      "time": "7:00 PM",
+      "location": "The Oaks Event Center",
+      "city": "Vidor",
+      "category": "Music Venue / Event Center",
+      "description": "Cajun meets swamp pop for a night of dancing. Bar and concessions available. No outside food or drink.",
+      "source_url": "https://theoakseventcenter.com/calendar/",
+      "price": "$46.00 and up",
+      "ticket_url": "https://www.vividseats.com/the-oaks-event-center-tickets/venue/35345"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:01.309Z",
+    "agent": "perplexity",
+    "venueId": 10,
+    "venueName": "Art Museum of Southeast Texas",
+    "event": {
+      "title": "A Legacy of Collecting: Beaumont Art Museum",
+      "date": "2025-11-02",
+      "time": "Museum Hours",
+      "location": "Art Museum of Southeast Texas",
+      "city": "Beaumont",
+      "category": "Museum",
+      "description": "Exhibition tracing the museum’s first 37 years, showcasing artworks that shaped its identity and reflecting the artistic spirit of the time with archival materials and curator audio reflections.",
+      "source_url": "https://amset.org",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:01.457Z",
+    "agent": "perplexity",
+    "venueId": 10,
+    "venueName": "Art Museum of Southeast Texas",
+    "event": {
+      "title": "Marc-Antony Guillory: We Have, Always",
+      "date": "2025-11-02",
+      "time": "Museum Hours",
+      "location": "Art Museum of Southeast Texas",
+      "city": "Beaumont",
+      "category": "Museum",
+      "description": "Summer 2025 Cafe Arts exhibition featuring works by Marc-Antony Guillory.",
+      "source_url": "https://amset.org",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:11.201Z",
+    "agent": "perplexity",
+    "venueId": 12,
+    "venueName": "The Venue at Belle Oaks",
+    "event": {
+      "title": "Jason Boland & The Stragglers with Candi Jenkins",
+      "date": "2025-11-29",
+      "time": "Evening (exact time not specified)",
+      "location": "The Venue at Belle Oaks",
+      "city": "Beaumont",
+      "category": "Concert",
+      "description": "Live music performance by Jason Boland & The Stragglers with Candi Jenkins.",
+      "source_url": "https://allevents.in/org/the-venue-at-belle-oaks/23020532",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:11.414Z",
+    "agent": "perplexity",
+    "venueId": 12,
+    "venueName": "The Venue at Belle Oaks",
+    "event": {
+      "title": "Tracy Byrd",
+      "date": "2025-11-29",
+      "time": "Evening (exact time not specified)",
+      "location": "The Venue at Belle Oaks",
+      "city": "Beaumont",
+      "category": "Concert",
+      "description": "Live music performance by Tracy Byrd.",
+      "source_url": "https://allevents.in/org/the-venue-at-belle-oaks/23020532",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:11.582Z",
+    "agent": "perplexity",
+    "venueId": 12,
+    "venueName": "The Venue at Belle Oaks",
+    "event": {
+      "title": "Casey and Jack LIVE at Belle Oaks",
+      "date": "2025-12-19",
+      "time": "6:00 PM",
+      "location": "The Venue at Belle Oaks",
+      "city": "Beaumont",
+      "category": "Concert",
+      "description": "Live music concert featuring Casey and Jack with VIP/Reserved seating and General Admission/Dance Floor options.",
+      "source_url": "https://www.thevenueatbelleoaks.com/bayou-live",
+      "price": "Not specified",
+      "ticket_url": "https://www.thevenueatbelleoaks.com/bayou-live"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:12.129Z",
+    "agent": "perplexity",
+    "venueId": 12,
+    "venueName": "The Venue at Belle Oaks",
+    "event": {
+      "title": "Kolby Cooper",
+      "date": "2025-12-04",
+      "time": "7:00 PM",
+      "location": "The Venue at Belle Oaks",
+      "city": "Beaumont",
+      "category": "Concert",
+      "description": "Live concert performance by Kolby Cooper.",
+      "source_url": "https://www.bandsintown.com/c/beaumont-tx",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:20.763Z",
+    "agent": "perplexity",
+    "venueId": 15,
+    "venueName": "Courville's",
+    "event": {
+      "title": "Fight Like Damian Fundraiser Night",
+      "date": "2025-11-04",
+      "time": "06:00 PM",
+      "location": "Courville's",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Fundraiser night event at Courville's.",
+      "source_url": "https://happeningnext.com/event/fight-like-damian-fundraiser-night-courvilles-eid3a0d1u8129",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:20.897Z",
+    "agent": "perplexity",
+    "venueId": 15,
+    "venueName": "Courville's",
+    "event": {
+      "title": "Mason Lively Live in Concert",
+      "date": "2025-11-20",
+      "time": "08:00 PM",
+      "location": "Courville's",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Live concert performance by Mason Lively.",
+      "source_url": "https://www.jambase.com/show/mason-lively-courvilles-restaurant-20251120",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:21.042Z",
+    "agent": "perplexity",
+    "venueId": 15,
+    "venueName": "Courville's",
+    "event": {
+      "title": "Wilder Blue Concert",
+      "date": "2025-11-20",
+      "time": "Doors at 6:30 PM",
+      "location": "Courville's",
+      "city": "Beaumont",
+      "category": "Music Venue",
+      "description": "Live concert by Wilder Blue. Tickets on sale from October 3, 2025.",
+      "source_url": "https://courvillestx.com/new-page-1",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:24.930Z",
+    "agent": "perplexity",
+    "venueId": 16,
+    "venueName": "Cattail Marsh Scenic Wetlands & Boardwalk",
+    "event": {
+      "title": "Saturday Yoga @ Cattail",
+      "date": "2025-11-03",
+      "time": "9:30 AM",
+      "location": "Cattail Marsh Scenic Wetlands & Boardwalk",
+      "city": "Beaumont",
+      "category": "Outdoor Venue",
+      "description": "A yoga session held outdoors at the scenic wetlands and boardwalk area.",
+      "source_url": "https://www.eventbrite.com/d/tx--beaumont/events/",
+      "price": "Check ticket price on event",
+      "ticket_url": "https://www.eventbrite.com/d/tx--beaumont/events/"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:25.075Z",
+    "agent": "perplexity",
+    "venueId": 16,
+    "venueName": "Cattail Marsh Scenic Wetlands & Boardwalk",
+    "event": {
+      "title": "Cattail Marsh Van Tours",
+      "date": "2025-11-04",
+      "time": "3:00 PM - 3:30 PM",
+      "location": "Cattail Marsh Scenic Wetlands & Boardwalk",
+      "city": "Beaumont",
+      "category": "Outdoor Venue",
+      "description": "Guided van tours exploring the 900-acre scenic wetlands and boardwalk area.",
+      "source_url": "https://allevents.in/beaumont/cattail-marsh-van-tours/10000147903737059",
+      "price": "Not specified",
+      "ticket_url": "https://allevents.in/beaumont/cattail-marsh-van-tours/10000147903737059"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:31.038Z",
+    "agent": "perplexity",
+    "venueId": 17,
+    "venueName": "Holiday Inn Beaumont",
+    "event": {
+      "title": "Couture for a Cause",
+      "date": "2025-11-01",
+      "time": "10:00 AM - 3:00 PM",
+      "location": "Holiday Inn & Suites Beaumont-Plaza",
+      "city": "Beaumont",
+      "category": "Hotel",
+      "description": "A special brunch edition featuring Southeast Texas boutiques, fashion show, brunch, shopping, and door prizes. Supports cancer patient support at Baptist Hospitals of Southeast Texas.",
+      "source_url": "https://www.bhsetfoundation.org/events/couture-for-a-cause/",
+      "price": "$65-$75 per ticket, $1,000 for a table of 10",
+      "ticket_url": "https://www.bhsetfoundation.org/events/couture-for-a-cause/"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:31.216Z",
+    "agent": "perplexity",
+    "venueId": 17,
+    "venueName": "Holiday Inn Beaumont",
+    "event": {
+      "title": "Texas Youth Advisory Commission Summit",
+      "date": "2025-02-01",
+      "time": "Time not specified",
+      "location": "Holiday Inn & Suites Beaumont-Plaza",
+      "city": "Beaumont",
+      "category": "Hotel",
+      "description": "Summit event for youth advisory commission.",
+      "source_url": "https://www.dugood.org/community-events",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:31.406Z",
+    "agent": "perplexity",
+    "venueId": 17,
+    "venueName": "Holiday Inn Beaumont",
+    "event": {
+      "title": "Sugar Plum Breakfast",
+      "date": "2025-11-15",
+      "time": "Time not specified",
+      "location": "Holiday Inn & Suites Beaumont-Plaza",
+      "city": "Beaumont",
+      "category": "Hotel",
+      "description": "Fundraiser event for BCB.",
+      "source_url": "https://www.marshawoodyacademy.com/newsletter-calendar/",
+      "price": "Not specified",
+      "ticket_url": "Not specified"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:37.000Z",
+    "agent": "perplexity",
+    "venueId": 20,
+    "venueName": "The Venue at Max Bowl",
+    "event": {
+      "title": "Holiday Showcase 2025 | Max Bowl Port Arthur",
+      "date": "2025-11-23",
+      "time": "8:00 PM",
+      "location": "The Venue at Max Bowl",
+      "city": "Port Arthur",
+      "category": "Event Center / Banquet Hall",
+      "description": "Holiday Showcase event featuring Drag Bingo and other entertainment.",
+      "source_url": "https://www.eventbrite.com/o/max-bowl-port-arthur-amp-the-venue-an-event-center-74242866453",
+      "price": "Check ticket price on event",
+      "ticket_url": "https://www.eventbrite.com/o/max-bowl-port-arthur-amp-the-venue-an-event-center-74242866453"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:40.907Z",
+    "agent": "perplexity",
+    "venueId": 34,
+    "venueName": "Riverfront Boardwalk and Pavilion",
+    "event": {
+      "title": "Picnic at the Pavilion",
+      "date": "2025-11-05",
+      "time": "11:00 AM - 2:00 PM",
+      "location": "Riverfront Boardwalk and Pavilion",
+      "city": "Orange",
+      "category": "Outdoor Venue / Pavilion",
+      "description": "Weekly community picnic event held every Wednesday at the Riverfront Boardwalk & Pavilion in downtown Orange.",
+      "source_url": "https://www.orangetexas.gov/Calendar.aspx",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:50.076Z",
+    "agent": "perplexity",
+    "venueId": 35,
+    "venueName": "Riverside Pavilion",
+    "event": {
+      "title": "Orangetober Festival",
+      "date": "2025-10-03",
+      "time": "All Day",
+      "location": "Riverside Pavilion",
+      "city": "Orange",
+      "category": "Outdoor Venue / Pavilion",
+      "description": "The 5th Annual Orangetober Festival features tours of the Pumpkin Village with over 10,000 pumpkins, a vendor market, gumbo cook-off, pumpkin pie eating contest, cornhole tournament, The Big Pumpkin Run 5k, Cirkus Zirkus Variety Show, food vendors, craft beer, frozen sangria, and live entertainment by Brandon Bennett, Clare Dunn, and William Clark Green. The weekend ends with a Pumpkin Scramble where attendees can take pumpkins home for free.",
+      "source_url": "https://orangetexas.gov/411/Orangetober-Festival",
+      "price": "Free",
+      "ticket_url": null
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:50.300Z",
+    "agent": "perplexity",
+    "venueId": 35,
+    "venueName": "Riverside Pavilion",
+    "event": {
+      "title": "Orangetober Festival",
+      "date": "2025-10-04",
+      "time": "All Day",
+      "location": "Riverside Pavilion",
+      "city": "Orange",
+      "category": "Outdoor Venue / Pavilion",
+      "description": "The 5th Annual Orangetober Festival features tours of the Pumpkin Village with over 10,000 pumpkins, a vendor market, gumbo cook-off, pumpkin pie eating contest, cornhole tournament, The Big Pumpkin Run 5k, Cirkus Zirkus Variety Show, food vendors, craft beer, frozen sangria, and live entertainment by Brandon Bennett, Clare Dunn, and William Clark Green. The weekend ends with a Pumpkin Scramble where attendees can take pumpkins home for free.",
+      "source_url": "https://orangetexas.gov/411/Orangetober-Festival",
+      "price": "Free",
+      "ticket_url": null
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:50.466Z",
+    "agent": "perplexity",
+    "venueId": 35,
+    "venueName": "Riverside Pavilion",
+    "event": {
+      "title": "Orangetober Festival",
+      "date": "2025-10-05",
+      "time": "All Day",
+      "location": "Riverside Pavilion",
+      "city": "Orange",
+      "category": "Outdoor Venue / Pavilion",
+      "description": "The 5th Annual Orangetober Festival features tours of the Pumpkin Village with over 10,000 pumpkins, a vendor market, gumbo cook-off, pumpkin pie eating contest, cornhole tournament, The Big Pumpkin Run 5k, Cirkus Zirkus Variety Show, food vendors, craft beer, frozen sangria, and live entertainment by Brandon Bennett, Clare Dunn, and William Clark Green. The weekend ends with a Pumpkin Scramble where attendees can take pumpkins home for free.",
+      "source_url": "https://orangetexas.gov/411/Orangetober-Festival",
+      "price": "Free",
+      "ticket_url": null
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:21:50.634Z",
+    "agent": "perplexity",
+    "venueId": 35,
+    "venueName": "Riverside Pavilion",
+    "event": {
+      "title": "Orange Recreation Center Easter Egg Hunt",
+      "date": "2025-04-18",
+      "time": "9:00 AM",
+      "location": "Riverside Pavilion",
+      "city": "Orange",
+      "category": "Outdoor Venue / Pavilion",
+      "description": "Join the Orange Recreation Center for their Easter Egg Hunt at Riverside Pavilion. This family-friendly event is perfect for children and parents to enjoy together.",
+      "source_url": "https://www.dugood.org/community-events",
+      "price": null,
+      "ticket_url": null
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:13.516Z",
+    "agent": "perplexity",
+    "venueId": 51,
+    "venueName": "Honky Tonk Texas",
+    "event": {
+      "title": "Full Band @ Honky Tonk Texas",
+      "date": "2025-11-08",
+      "time": "9:00 PM - 12:00 AM",
+      "location": "Honky Tonk Texas",
+      "city": "Silsbee",
+      "category": "Music Venue / Bar",
+      "description": "Live full band performance at Honky Tonk Texas.",
+      "source_url": "https://danilacourmusic.com/event/6212618/731652425/full-band-honky-tonk-texas",
+      "price": "Not specified",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:13.684Z",
+    "agent": "perplexity",
+    "venueId": 51,
+    "venueName": "Honky Tonk Texas",
+    "event": {
+      "title": "Wayne Toups Concert",
+      "date": "2025-11-15",
+      "time": "Doors open 7:00 PM, Showtime around 9:00 PM",
+      "location": "Honky Tonk Texas",
+      "city": "Silsbee",
+      "category": "Music Venue / Bar",
+      "description": "Grammy Award Winner Wayne Toups live in concert. General Admission standing room only. Limited reserved seating available.",
+      "source_url": "https://www.outhousetickets.com/events/honky-tonk-texas-template-2",
+      "price": "General Admission pre-sale and day of show prices vary",
+      "ticket_url": "https://www.outhousetickets.com/events/honky-tonk-texas-template-2"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:13.885Z",
+    "agent": "perplexity",
+    "venueId": 51,
+    "venueName": "Honky Tonk Texas",
+    "event": {
+      "title": "Randall King Concert",
+      "date": "2025-12-05",
+      "time": "7:00 PM",
+      "location": "Honky Tonk Texas",
+      "city": "Silsbee",
+      "category": "Music Venue / Bar",
+      "description": "Live concert by Randall King at Honky Tonk Texas.",
+      "source_url": "https://www.outhousetickets.com/venues/honky-tonk-texas",
+      "price": "Not specified",
+      "ticket_url": "https://www.outhousetickets.com/venues/honky-tonk-texas"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:14.052Z",
+    "agent": "perplexity",
+    "venueId": 51,
+    "venueName": "Honky Tonk Texas",
+    "event": {
+      "title": "Creed Fisher Concert",
+      "date": "2025-12-06",
+      "time": "7:00 PM",
+      "location": "Honky Tonk Texas",
+      "city": "Silsbee",
+      "category": "Music Venue / Bar",
+      "description": "Live concert by Creed Fisher at Honky Tonk Texas.",
+      "source_url": "https://www.outhousetickets.com/venues/honky-tonk-texas",
+      "price": "Not specified",
+      "ticket_url": "https://www.outhousetickets.com/venues/honky-tonk-texas"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:21.460Z",
+    "agent": "perplexity",
+    "venueId": 52,
+    "venueName": "The Foundry Venue",
+    "event": {
+      "title": "Chezile - Wish You Were Here Pt 2 Tour",
+      "date": "2025-11-04",
+      "time": "8:00 PM",
+      "location": "The Foundry Venue",
+      "city": "Silsbee",
+      "category": "Event Venue / Banquet Hall",
+      "description": "Live concert tour performance by Chezile.",
+      "source_url": "https://www.livenation.com/api/calendar/KovZpZAEktdA/the-foundry-upcoming-events.pdf",
+      "price": "Not listed",
+      "ticket_url": "Not listed"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:21.639Z",
+    "agent": "perplexity",
+    "venueId": 52,
+    "venueName": "The Foundry Venue",
+    "event": {
+      "title": "ASTN: What If This Tour...",
+      "date": "2025-11-05",
+      "time": "8:00 PM",
+      "location": "The Foundry Venue",
+      "city": "Silsbee",
+      "category": "Event Venue / Banquet Hall",
+      "description": "Live concert tour performance by ASTN.",
+      "source_url": "https://www.livenation.com/api/calendar/KovZpZAEktdA/the-foundry-upcoming-events.pdf",
+      "price": "Not listed",
+      "ticket_url": "Not listed"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:21.829Z",
+    "agent": "perplexity",
+    "venueId": 52,
+    "venueName": "The Foundry Venue",
+    "event": {
+      "title": "The Mars Volta",
+      "date": "2025-11-05",
+      "time": "8:00 PM",
+      "location": "The Foundry Venue",
+      "city": "Silsbee",
+      "category": "Event Venue / Banquet Hall",
+      "description": "Live concert by The Mars Volta.",
+      "source_url": "https://www.livenation.com/api/calendar/KovZpZAEktdA/the-foundry-upcoming-events.pdf",
+      "price": "Not listed",
+      "ticket_url": "Not listed"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:21.985Z",
+    "agent": "perplexity",
+    "venueId": 52,
+    "venueName": "The Foundry Venue",
+    "event": {
+      "title": "Roy Wood Jr.: The Man of Many Fathers Book Tour",
+      "date": "2025-11-06",
+      "time": "7:30 PM",
+      "location": "The Foundry Venue",
+      "city": "Silsbee",
+      "category": "Event Venue / Banquet Hall",
+      "description": "Comedy and book tour event featuring Roy Wood Jr.",
+      "source_url": "https://www.livenation.com/api/calendar/KovZpZAEktdA/the-foundry-upcoming-events.pdf",
+      "price": "Not listed",
+      "ticket_url": "Not listed"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:22.175Z",
+    "agent": "perplexity",
+    "venueId": 52,
+    "venueName": "The Foundry Venue",
+    "event": {
+      "title": "Vastive",
+      "date": "2025-11-06",
+      "time": "10:00 PM",
+      "location": "The Foundry Venue",
+      "city": "Silsbee",
+      "category": "Event Venue / Banquet Hall",
+      "description": "Live music performance by Vastive.",
+      "source_url": "https://www.livenation.com/api/calendar/KovZpZAEktdA/the-foundry-upcoming-events.pdf",
+      "price": "Not listed",
+      "ticket_url": "Not listed"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:22.331Z",
+    "agent": "perplexity",
+    "venueId": 52,
+    "venueName": "The Foundry Venue",
+    "event": {
+      "title": "RENE VACA 2025 TOUR",
+      "date": "2025-11-07",
+      "time": "7:00 PM",
+      "location": "The Foundry Venue",
+      "city": "Silsbee",
+      "category": "Event Venue / Banquet Hall",
+      "description": "Concert tour performance by Rene Vaca.",
+      "source_url": "https://www.livenation.com/api/calendar/KovZpZAEktdA/the-foundry-upcoming-events.pdf",
+      "price": "Not listed",
+      "ticket_url": "Not listed"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:26.450Z",
+    "agent": "perplexity",
+    "venueId": 19,
+    "venueName": "Quality Inn and Suites",
+    "event": {
+      "title": "No upcoming events found",
+      "date": "2025-11-02",
+      "time": "N/A",
+      "location": "Quality Inn and Suites",
+      "city": "Beaumont",
+      "category": "Hotel",
+      "description": "No confirmed upcoming events were found at Quality Inn and Suites in Beaumont, Texas on the provided website or associated social media.",
+      "source_url": "https://www.choicehotels.com/texas/beaumont/quality-inn-hotels/tx020",
+      "price": "N/A",
+      "ticket_url": "N/A"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:34.691Z",
+    "agent": "perplexity",
+    "venueId": 24,
+    "venueName": "Port Arthur Public Library",
+    "event": {
+      "title": "Hora de cuentos en familia",
+      "date": "2025-11-06",
+      "time": "10:00 AM - 10:30 AM",
+      "location": "Port Arthur Public Library",
+      "city": "Port Arthur",
+      "category": "Community Center / Cultural Venue",
+      "description": "Family storytime event at the library.",
+      "source_url": "https://stacks.paplibrary.org/hora-de-cuentos-en-familia-7",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  },
+  {
+    "timestamp": "2025-11-02T12:22:34.881Z",
+    "agent": "perplexity",
+    "venueId": 24,
+    "venueName": "Port Arthur Public Library",
+    "event": {
+      "title": "Music and Movement",
+      "date": "2025-11-21",
+      "time": "10:00 AM - 10:30 AM",
+      "location": "Port Arthur Public Library",
+      "city": "Port Arthur",
+      "category": "Community Center / Cultural Venue",
+      "description": "Children's music and movement session organized by Shanon Welch, MLS Children's and Youth Services.",
+      "source_url": "https://stacks.paplibrary.org/music-and-movement-5",
+      "price": "Free",
+      "ticket_url": ""
+    }
+  }
+]

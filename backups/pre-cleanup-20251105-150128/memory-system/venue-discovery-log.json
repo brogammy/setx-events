@@ -1,0 +1,13 @@
+{
+  "venues": [
+    {
+      "name": "Cloud Agent Test Venue",
+      "city": "Beaumont",
+      "website": "https://cloud-agent-test.com",
+      "phone": "(409) 999-9999",
+      "email": "test@cloud-agent.com",
+      "discovered_by": "Cloud-Venue-Discovery-v1",
+      "discovered_at": "2025-11-02T14:31:39.113Z"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Port Arthur Event",
+  "venue_name": "Port Arthur Area",
+  "category": "Cultural Event",
+  "imageUrls": [],
+  "confidence": 0,
+  "methods_used": [
+    "source_scrape",
+    "pattern_search",
+    "validation"
+  ],
+  "timestamp": "2025-11-02T14:34:59.205Z"
+}

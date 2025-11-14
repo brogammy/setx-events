@@ -1,0 +1,254 @@
+{
+  "name": "SETX Events Daily Scraper",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Daily at 6am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://www.beaumontcvb.com/events/",
+        "options": {}
+      },
+      "name": "Scrape Beaumont CVB",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://visitportarthurtx.com/annual-events/",
+        "options": {}
+      },
+      "name": "Scrape Port Arthur Events",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 400]
+    },
+    {
+      "parameters": {
+        "url": "https://orangetexas.gov/499/Upcoming-Events",
+        "options": {}
+      },
+      "name": "Scrape Orange Events",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 600]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Beaumont CVB Events\nconst html = $input.item.json.data;\nconst events = [];\n\n// Extract event data from HTML\n// This is a simplified parser - adjust based on actual HTML structure\nconst eventPattern = /<div class=\"event-item\"[^>]*>([\\s\\S]*?)<\\/div>/gi;\nlet match;\n\nwhile ((match = eventPattern.exec(html)) !== null) {\n  const eventHtml = match[1];\n  \n  // Extract title\n  const titleMatch = /<h[23][^>]*>([^<]+)<\\/h[23]>/i.exec(eventHtml);\n  const title = titleMatch ? titleMatch[1].trim() : '';\n  \n  // Extract date\n  const dateMatch = /<time[^>]*datetime=\"([^\"]+)\"/i.exec(eventHtml);\n  const date = dateMatch ? dateMatch[1] : '';\n  \n  // Extract location\n  const locationMatch = /<span[^>]*class=\"[^\"]*location[^\"]*\"[^>]*>([^<]+)<\\/span>/i.exec(eventHtml);\n  const location = locationMatch ? locationMatch[1].trim() : '';\n  \n  if (title && date) {\n    events.push({\n      title: title,\n      date: date,\n      time: '',\n      location: location,\n      city: 'Beaumont',\n      category: 'Community Event',\n      description: title,\n      source_url: 'https://www.beaumontcvb.com/events/'\n    });\n  }\n}\n\nreturn events.map(event => ({ json: event }));"
+      },
+      "name": "Parse Beaumont Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Port Arthur Events\nconst html = $input.item.json.data;\nconst events = [];\n\n// Extract event data from HTML\nconst eventPattern = /<div class=\"event\"[^>]*>([\\s\\S]*?)<\\/div>/gi;\nlet match;\n\nwhile ((match = eventPattern.exec(html)) !== null) {\n  const eventHtml = match[1];\n  \n  // Extract title\n  const titleMatch = /<h[23][^>]*>([^<]+)<\\/h[23]>/i.exec(eventHtml);\n  const title = titleMatch ? titleMatch[1].trim() : '';\n  \n  // Extract description\n  const descMatch = /<p[^>]*>([^<]+)<\\/p>/i.exec(eventHtml);\n  const description = descMatch ? descMatch[1].trim() : title;\n  \n  if (title) {\n    events.push({\n      title: title,\n      date: new Date().toISOString().split('T')[0],\n      time: '',\n      location: 'Port Arthur',\n      city: 'Port Arthur',\n      category: 'Cultural Event',\n      description: description,\n      source_url: 'https://visitportarthurtx.com/annual-events/'\n    });\n  }\n}\n\nreturn events.map(event => ({ json: event }));"
+      },
+      "name": "Parse Port Arthur Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Orange Events\nconst html = $input.item.json.data;\nconst events = [];\n\n// Extract event data from HTML\nconst eventPattern = /<tr[^>]*>([\\s\\S]*?)<\\/tr>/gi;\nlet match;\n\nwhile ((match = eventPattern.exec(html)) !== null) {\n  const eventHtml = match[1];\n  \n  // Extract event name\n  const titleMatch = /<td[^>]*>([^<]+)<\\/td>/i.exec(eventHtml);\n  const title = titleMatch ? titleMatch[1].trim() : '';\n  \n  // Extract date\n  const dateMatch = /<td[^>]*>([0-9\\/]+)<\\/td>/i.exec(eventHtml);\n  const date = dateMatch ? dateMatch[1] : '';\n  \n  if (title && title.length > 3) {\n    events.push({\n      title: title,\n      date: date,\n      time: '',\n      location: 'Orange Recreation Center',\n      city: 'Orange',\n      category: 'Sports & Recreation',\n      description: title,\n      source_url: 'https://orangetexas.gov/499/Upcoming-Events'\n    });\n  }\n}\n\nreturn events.map(event => ({ json: event }));"
+      },
+      "name": "Parse Orange Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 600]
+    },
+    {
+      "parameters": {},
+      "name": "Merge All Events",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [850, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3001/api/events",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "title",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "name": "date",
+              "value": "={{ $json.date }}"
+            },
+            {
+              "name": "time",
+              "value": "={{ $json.time }}"
+            },
+            {
+              "name": "location",
+              "value": "={{ $json.location }}"
+            },
+            {
+              "name": "city",
+              "value": "={{ $json.city }}"
+            },
+            {
+              "name": "category",
+              "value": "={{ $json.category }}"
+            },
+            {
+              "name": "description",
+              "value": "={{ $json.description }}"
+            },
+            {
+              "name": "source_url",
+              "value": "={{ $json.source_url }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Save to Database",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1050, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log summary\nconst itemCount = $input.all().length;\nconsole.log(`Successfully scraped and saved ${itemCount} events`);\nreturn [{ json: { success: true, count: itemCount, timestamp: new Date().toISOString() } }];"
+      },
+      "name": "Log Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 400]
+    }
+  ],
+  "connections": {
+    "Daily at 6am": {
+      "main": [
+        [
+          {
+            "node": "Scrape Beaumont CVB",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Scrape Port Arthur Events",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Scrape Orange Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Beaumont CVB": {
+      "main": [
+        [
+          {
+            "node": "Parse Beaumont Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Port Arthur Events": {
+      "main": [
+        [
+          {
+            "node": "Parse Port Arthur Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Orange Events": {
+      "main": [
+        [
+          {
+            "node": "Parse Orange Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Beaumont Events": {
+      "main": [
+        [
+          {
+            "node": "Merge All Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Port Arthur Events": {
+      "main": [
+        [
+          {
+            "node": "Merge All Events",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Parse Orange Events": {
+      "main": [
+        [
+          {
+            "node": "Merge All Events",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge All Events": {
+      "main": [
+        [
+          {
+            "node": "Save to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Database": {
+      "main": [
+        [
+          {
+            "node": "Log Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {}
+}

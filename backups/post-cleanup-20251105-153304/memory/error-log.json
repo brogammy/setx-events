@@ -1,0 +1,402 @@
+[
+  {
+    "timestamp": "2025-11-02T12:22:51.844Z",
+    "agent": "ollama-local",
+    "venueId": 1,
+    "venueName": "Julie Rogers Theatre",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.847Z",
+    "agent": "ollama-local",
+    "venueId": 2,
+    "venueName": "The Logon Cafe",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.849Z",
+    "agent": "ollama-local",
+    "venueId": 3,
+    "venueName": "Museum of the Gulf Coast",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.851Z",
+    "agent": "ollama-local",
+    "venueId": 4,
+    "venueName": "Beaumont Botanical Gardens",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.853Z",
+    "agent": "ollama-local",
+    "venueId": 5,
+    "venueName": "Beaumont Civic Centre",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.855Z",
+    "agent": "ollama-local",
+    "venueId": 7,
+    "venueName": "Julie Rogers Theatre",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.857Z",
+    "agent": "ollama-local",
+    "venueId": 8,
+    "venueName": "Jefferson Theatre",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.859Z",
+    "agent": "ollama-local",
+    "venueId": 9,
+    "venueName": "Downtown Event Centre",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.862Z",
+    "agent": "ollama-local",
+    "venueId": 11,
+    "venueName": "Ford Park Entertainment Complex",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.864Z",
+    "agent": "ollama-local",
+    "venueId": 21,
+    "venueName": "Holiday Inn Port Arthur - Park Central",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.866Z",
+    "agent": "ollama-local",
+    "venueId": 22,
+    "venueName": "Bowers Civic Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.869Z",
+    "agent": "ollama-local",
+    "venueId": 25,
+    "venueName": "Port Arthur Civic Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.871Z",
+    "agent": "ollama-local",
+    "venueId": 41,
+    "venueName": "Shangri La Botanical Gardens & Nature Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.873Z",
+    "agent": "ollama-local",
+    "venueId": 48,
+    "venueName": "The Plaza Event Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.875Z",
+    "agent": "ollama-local",
+    "venueId": 49,
+    "venueName": "The Oaks Event Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.877Z",
+    "agent": "ollama-local",
+    "venueId": 6,
+    "venueName": "Tevis Room",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.879Z",
+    "agent": "ollama-local",
+    "venueId": 10,
+    "venueName": "Art Museum of Southeast Texas",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.881Z",
+    "agent": "ollama-local",
+    "venueId": 12,
+    "venueName": "The Venue at Belle Oaks",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.883Z",
+    "agent": "ollama-local",
+    "venueId": 13,
+    "venueName": "Be308",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.885Z",
+    "agent": "ollama-local",
+    "venueId": 14,
+    "venueName": "The Laurels, Home of K & K Designs",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.903Z",
+    "agent": "ollama-local",
+    "venueId": 15,
+    "venueName": "Courville's",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.921Z",
+    "agent": "ollama-local",
+    "venueId": 16,
+    "venueName": "Cattail Marsh Scenic Wetlands & Boardwalk",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.922Z",
+    "agent": "ollama-local",
+    "venueId": 17,
+    "venueName": "Holiday Inn Beaumont",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.924Z",
+    "agent": "ollama-local",
+    "venueId": 18,
+    "venueName": "Sonesta Essential Beaumont",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.926Z",
+    "agent": "ollama-local",
+    "venueId": 20,
+    "venueName": "The Venue at Max Bowl",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.928Z",
+    "agent": "ollama-local",
+    "venueId": 34,
+    "venueName": "Riverfront Boardwalk and Pavilion",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.007Z",
+    "agent": "ollama-local",
+    "venueId": 35,
+    "venueName": "Riverside Pavilion",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.011Z",
+    "agent": "ollama-local",
+    "venueId": 42,
+    "venueName": "The Garden District",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.013Z",
+    "agent": "ollama-local",
+    "venueId": 43,
+    "venueName": "The Brown Estate - Lamar State College Orange",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.014Z",
+    "agent": "ollama-local",
+    "venueId": 44,
+    "venueName": "James Hall Event Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.016Z",
+    "agent": "ollama-local",
+    "venueId": 45,
+    "venueName": "The Hidden Barn Event Hall",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.018Z",
+    "agent": "ollama-local",
+    "venueId": 46,
+    "venueName": "Holiday Inn Port Arthur - Park Central",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.019Z",
+    "agent": "ollama-local",
+    "venueId": 47,
+    "venueName": "Evergreen Event Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.022Z",
+    "agent": "ollama-local",
+    "venueId": 51,
+    "venueName": "Honky Tonk Texas",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.023Z",
+    "agent": "ollama-local",
+    "venueId": 52,
+    "venueName": "The Foundry Venue",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.025Z",
+    "agent": "ollama-local",
+    "venueId": 19,
+    "venueName": "Quality Inn and Suites",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.028Z",
+    "agent": "ollama-local",
+    "venueId": 24,
+    "venueName": "Port Arthur Public Library",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.033Z",
+    "agent": "ollama-local",
+    "venueId": 36,
+    "venueName": "City of Orange Boat Ramp",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.034Z",
+    "agent": "ollama-local",
+    "venueId": 38,
+    "venueName": "SureStay by Best Western",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.036Z",
+    "agent": "ollama-local",
+    "venueId": 53,
+    "venueName": "Whispering Pines Event Center",
+    "errorType": "scraping_error",
+    "errorMessage": "Request failed with status code 404",
+    "tried": "scrape_with_learned_context",
+    "resolution": "logged_for_analysis"
+  }
+]

@@ -1,0 +1,9 @@
+========================================
+✅ SETX Events API running
+   Local:  http://localhost:3001
+   Network: http://100.104.226.70:3001
+========================================
+✅ Connected to SQLite database
+✅ Event created: Beaumont Weekly Event (ID: 76)
+✅ Event created: Port Arthur Event (ID: 77)
+✅ Event created: Orange Community Event (ID: 78)

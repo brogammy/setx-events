@@ -1,0 +1,242 @@
+{
+  "name": "SETX Events Daily Scraper - Two Merge Nodes",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Daily at 6am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "id": "trigger-daily"
+    },
+    {
+      "parameters": {
+        "url": "https://www.beaumontcvb.com/events/",
+        "options": {}
+      },
+      "name": "Scrape Beaumont CVB",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 200],
+      "id": "scrape-beaumont"
+    },
+    {
+      "parameters": {
+        "url": "https://visitportarthurtx.com/annual-events/",
+        "options": {}
+      },
+      "name": "Scrape Port Arthur Events",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 400],
+      "id": "scrape-port-arthur"
+    },
+    {
+      "parameters": {
+        "url": "https://orangetexas.gov/499/Upcoming-Events",
+        "options": {}
+      },
+      "name": "Scrape Orange Events",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 600],
+      "id": "scrape-orange"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Beaumont CVB Events\nconst html = $input.item.json.data;\nconst events = [];\n\nconst eventPattern = /<div class=\"event-item\"[^>]*>([\\s\\S]*?)<\\/div>/gi;\nlet match;\n\nwhile ((match = eventPattern.exec(html)) !== null) {\n  const eventHtml = match[1];\n  const titleMatch = /<h[23][^>]*>([^<]+)<\\/h[23]>/i.exec(eventHtml);\n  const title = titleMatch ? titleMatch[1].trim() : '';\n  const dateMatch = /<time[^>]*datetime=\"([^\"]+)\"/i.exec(eventHtml);\n  const date = dateMatch ? dateMatch[1] : '';\n  \n  if (title && date) {\n    events.push({\n      title: title,\n      date: date,\n      time: '',\n      location: 'Beaumont',\n      city: 'Beaumont',\n      category: 'Community Event',\n      description: title,\n      source_url: 'https://www.beaumontcvb.com/events/'\n    });\n  }\n}\n\nreturn events.map(event => ({ json: event }));"
+      },
+      "name": "Parse Beaumont CVB Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 200],
+      "id": "parse-beaumont"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Port Arthur Events\nconst html = $input.item.json.data;\nconst events = [];\n\nconst eventPattern = /<div class=\"event\"[^>]*>([\\s\\S]*?)<\\/div>/gi;\nlet match;\n\nwhile ((match = eventPattern.exec(html)) !== null) {\n  const eventHtml = match[1];\n  const titleMatch = /<h[23][^>]*>([^<]+)<\\/h[23]>/i.exec(eventHtml);\n  const title = titleMatch ? titleMatch[1].trim() : '';\n  \n  if (title) {\n    events.push({\n      title: title,\n      date: new Date().toISOString().split('T')[0],\n      time: '',\n      location: 'Port Arthur',\n      city: 'Port Arthur',\n      category: 'Cultural Event',\n      description: title,\n      source_url: 'https://visitportarthurtx.com/annual-events/'\n    });\n  }\n}\n\nreturn events.map(event => ({ json: event }));"
+      },
+      "name": "Parse Port Arthur Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 400],
+      "id": "parse-port-arthur"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Orange Events\nconst html = $input.item.json.data;\nconst events = [];\n\nconst eventPattern = /<tr[^>]*>([\\s\\S]*?)<\\/tr>/gi;\nlet match;\n\nwhile ((match = eventPattern.exec(html)) !== null) {\n  const eventHtml = match[1];\n  const titleMatch = /<td[^>]*>([^<]+)<\\/td>/i.exec(eventHtml);\n  const title = titleMatch ? titleMatch[1].trim() : '';\n  const dateMatch = /<td[^>]*>([0-9\\/]+)<\\/td>/i.exec(eventHtml);\n  const date = dateMatch ? dateMatch[1] : '';\n  \n  if (title && title.length > 3) {\n    events.push({\n      title: title,\n      date: date,\n      time: '',\n      location: 'Orange Recreation Center',\n      city: 'Orange',\n      category: 'Sports & Recreation',\n      description: title,\n      source_url: 'https://orangetexas.gov/499/Upcoming-Events'\n    });\n  }\n}\n\nreturn events.map(event => ({ json: event }));"
+      },
+      "name": "Parse Orange Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 600],
+      "id": "parse-orange"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll"
+      },
+      "name": "Merge Beaumont + Port Arthur",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [850, 300],
+      "id": "merge-first"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll"
+      },
+      "name": "Merge with Orange",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [1050, 400],
+      "id": "merge-second"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3001/api/events",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "name": "Save to Database",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1250, 400],
+      "id": "save-db"
+    }
+  ],
+  "connections": {
+    "Daily at 6am": {
+      "main": [
+        [
+          {
+            "node": "Scrape Beaumont CVB",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Scrape Port Arthur Events",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Scrape Orange Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Beaumont CVB": {
+      "main": [
+        [
+          {
+            "node": "Parse Beaumont CVB Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Port Arthur Events": {
+      "main": [
+        [
+          {
+            "node": "Parse Port Arthur Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Orange Events": {
+      "main": [
+        [
+          {
+            "node": "Parse Orange Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Beaumont CVB Events": {
+      "main": [
+        [
+          {
+            "node": "Merge Beaumont + Port Arthur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Port Arthur Events": {
+      "main": [
+        [
+          {
+            "node": "Merge Beaumont + Port Arthur",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Parse Orange Events": {
+      "main": [
+        [
+          {
+            "node": "Merge with Orange",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Beaumont + Port Arthur": {
+      "main": [
+        [
+          {
+            "node": "Merge with Orange",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge with Orange": {
+      "main": [
+        [
+          {
+            "node": "Save to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-01T15:52:00.000Z",
+  "versionId": "1"
+}

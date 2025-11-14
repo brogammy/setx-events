@@ -1,0 +1,263 @@
+{
+  "name": "SETX Events Scraper - Complete with Real Venues",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": [
+          {
+            "mode": "everyDay",
+            "hour": 0,
+            "minute": 0
+          }
+        ]
+      },
+      "id": "trigger-midnight",
+      "name": "⏰ Trigger: Daily at Midnight",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:3001/api/venues",
+        "method": "GET"
+      },
+      "id": "fetch-venues",
+      "name": "📍 Fetch All Venues from Database",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "mode": "each",
+        "expression": "={{ $json }}"
+      },
+      "id": "loop-each-venue",
+      "name": "🔄 Loop: Each Venue",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.website }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "scrape-website",
+      "name": "🌐 Scrape Venue Website",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [700, 300],
+      "onError": "continueOnError"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse events from HTML using Cheerio\nconst cheerio = require('cheerio');\nconst http = require('http');\n\nlet htmlContent = '';\ntry {\n  htmlContent = $input.first().json.body || '';\n} catch (e) {\n  console.log('Could not get body, using data');\n  htmlContent = JSON.stringify($input.first().json).substring(0, 5000);\n}\n\nconst $ = cheerio.load(htmlContent);\nconst events = [];\nconst venueName = $input.previous().json.name;\nconst venueCity = $input.previous().json.city;\nconst venueId = $input.previous().json.id;\nconst venueWebsite = $input.previous().json.website;\n\n// Extract event patterns from HTML\nconst eventElements = $('[class*=\"event\"], [class*=\"Event\"], article, .post, [data-event], .event-item');\n\neventElements.each((i, elem) => {\n  if (events.length >= 10) return; // Max 10 per venue\n\n  const title = $(elem).find('h2, h3, .title, .event-title, h1').text().trim();\n  const dateStr = $(elem).find('[class*=\"date\"], time, .event-date').text().trim();\n  const timeStr = $(elem).find('[class*=\"time\"], .event-time').text().trim();\n  const description = $(elem).find('p, .description, .event-description, .text').text().trim().substring(0, 300);\n  const link = $(elem).find('a').attr('href');\n  const imageUrl = $(elem).find('img').attr('src');\n\n  if (title && title.length > 5) {\n    events.push({\n      title: title.substring(0, 100),\n      date: dateStr.substring(0, 20) || '2025-11-15',\n      time: timeStr || 'TBD',\n      location: venueName,\n      city: venueCity,\n      category: 'Event',\n      description: description || `Event at ${venueName}`,\n      source_url: link || venueWebsite,\n      venue_id: venueId,\n      image_url: imageUrl ? (imageUrl.startsWith('http') ? imageUrl : venueWebsite + imageUrl) : null\n    });\n  }\n});\n\nreturn {\n  venue_id: venueId,\n  venue_name: venueName,\n  venue_city: venueCity,\n  venue_website: venueWebsite,\n  events_scraped: events.length,\n  events: events\n};"
+      },
+      "id": "parse-html",
+      "name": "📄 Parse HTML Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300],
+      "onError": "continueOnError"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3003/api/validate-batch",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "body": "={{ JSON.stringify($input.first().json.events || []) }}",
+        "options": {}
+      },
+      "id": "validate-cloud",
+      "name": "☁️ Validate Events (Perplexity)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 300],
+      "onError": "continueOnError"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3004/mcp/claude/research-batch-images",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "body": "={{ JSON.stringify(($input.first().json.approved || []).map(e => ({title: e.title, venue_name: $input.previous(1).json.venue_name, source_url: e.source_url}))) }}",
+        "options": {}
+      },
+      "id": "research-images-mcp",
+      "name": "🖼️ Research Images (MCP)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1300, 300],
+      "onError": "continueOnError"
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:3001/api/events",
+        "method": "POST",
+        "loopOver": "={{ $input.first().json.results || [] }}",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "body": "={{ JSON.stringify({title: $item.json.title, date: $item.json.date, time: $item.json.time || 'TBD', location: $item.json.location, city: $input.previous(2).json.venue_city, category: $item.json.category || 'Event', description: $item.json.description, source_url: $item.json.source_url, image_url: $item.json.imageUrls ? $item.json.imageUrls[0] : null, venue_id: $input.previous(2).json.venue_id}) }}",
+        "options": {}
+      },
+      "id": "save-to-api",
+      "name": "💾 Save Events to Database",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1500, 300],
+      "onError": "continueOnError"
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:3001/api/admin/stats",
+        "method": "GET"
+      },
+      "id": "get-final-stats",
+      "name": "📊 Get Final Statistics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1700, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log summary of scraping run\nconst stats = $input.first().json;\nconst message = `✅ SCRAPING COMPLETE\n\n📈 Statistics:\n- Total Events: ${stats.totalEvents}\n- Upcoming Events: ${stats.upcomingEvents}\n- Active Venues: ${stats.activeVenues}\n- Timestamp: ${new Date().toISOString()}\n\n🎉 System updated successfully!`;\n\nconsole.log(message);\n\nreturn {\n  status: 'SUCCESS',\n  timestamp: new Date().toISOString(),\n  totalEvents: stats.totalEvents,\n  upcomingEvents: stats.upcomingEvents,\n  activeVenues: stats.activeVenues,\n  message: message\n};"
+      },
+      "id": "log-summary",
+      "name": "✅ Log Completion Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1900, 300]
+    }
+  ],
+  "connections": {
+    "trigger-midnight": {
+      "main": [
+        [
+          {
+            "node": "fetch-venues",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fetch-venues": {
+      "main": [
+        [
+          {
+            "node": "loop-each-venue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "loop-each-venue": {
+      "main": [
+        [
+          {
+            "node": "scrape-website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "scrape-website": {
+      "main": [
+        [
+          {
+            "node": "parse-html",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "parse-html": {
+      "main": [
+        [
+          {
+            "node": "validate-cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "validate-cloud": {
+      "main": [
+        [
+          {
+            "node": "research-images-mcp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "research-images-mcp": {
+      "main": [
+        [
+          {
+            "node": "save-to-api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "save-to-api": {
+      "main": [
+        [
+          {
+            "node": "get-final-stats",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get-final-stats": {
+      "main": [
+        [
+          {
+            "node": "log-summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "UTC"
+  }
+}

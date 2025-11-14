@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        /* Header with back button */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .header a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .header h1 {
+            flex: 1;
+            margin: 0 20px;
+            font-size: 28px;
+        }
+
+        /* Main content */
+        .content {
+            padding: 40px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .event-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .event-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .meta-value a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .meta-value a:hover {
+            text-decoration: underline;
+        }
+
+        .description-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .description-text {
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Venue section */
+        .venue-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .venue-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .venue-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Action buttons */
+        .actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        /* Status badges */
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-category {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .badge-restriction {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .badge-price {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        /* Data grid */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .data-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .data-card-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .data-card-value {
+            font-size: 16px;
+            color: #333;
+            word-break: break-word;
+        }
+
+        /* Share section */
+        .share-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .share-title {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            background: white;
+            color: #666;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .share-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error state */
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .event-title {
+                font-size: 24px;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+
+            .event-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="javascript:history.back()" title="Back">←</a>
+            <h1>Event Details</h1>
+            <div></div>
+        </div>
+
+        <div class="content" id="content">
+            <div class="loading">
+                <div class="spinner"></div>
+                Loading event details...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadEvent() {
+            try {
+                // Get event ID from URL
+                const eventId = new URLSearchParams(window.location.search).get('id') ||
+                                window.location.pathname.split('/').pop();
+
+                if (!eventId) {
+                    showError('No event ID provided');
+                    return;
+                }
+
+                // Fetch event data
+                const response = await fetch(`/api/events/${eventId}`);
+                if (!response.ok) {
+                    throw new Error('Event not found');
+                }
+
+                const event = await response.json();
+                displayEvent(event);
+            } catch (error) {
+                showError(`Error loading event: ${error.message}`);
+            }
+        }
+
+        function displayEvent(event) {
+            const content = document.getElementById('content');
+
+            // Build HTML
+            let html = `
+                <img src="${event.image_url || ''}" alt="${event.title}" class="hero-image"
+                     onerror="this.style.display='none'">
+
+                <h2 class="event-title">${escapeHtml(event.title)}</h2>
+
+                <div class="event-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">📅 Date</div>
+                        <div class="meta-value">${formatDate(event.date)}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">🕐 Time</div>
+                        <div class="meta-value">${event.time || 'TBD'}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">📍 Location</div>
+                        <div class="meta-value">${escapeHtml(event.location || event.city)}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">💰 Price</div>
+                        <div class="meta-value">${event.price || 'Check source'}</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <span class="badge badge-category">${escapeHtml(event.category || 'Event')}</span>
+                    ${event.age_restriction ? `<span class="badge badge-restriction">${escapeHtml(event.age_restriction)}</span>` : ''}
+                </div>
+            `;
+
+            // Description
+            if (event.description) {
+                html += `
+                    <div class="description-section">
+                        <h3 class="section-title">About This Event</h3>
+                        <p class="description-text">${escapeHtml(event.description)}</p>
+                    </div>
+                `;
+            }
+
+            // Venue info
+            if (event.venue_id) {
+                html += `
+                    <div class="venue-section">
+                        <div class="meta-label">📌 Venue</div>
+                        <a href="/venue/${event.venue_id}" class="venue-link">View Venue Details →</a>
+                    </div>
+                `;
+            }
+
+            // All data
+            html += `
+                <div class="description-section">
+                    <h3 class="section-title">Event Details</h3>
+                    <div class="data-grid">
+                        <div class="data-card">
+                            <div class="data-card-label">🏙️ City</div>
+                            <div class="data-card-value">${escapeHtml(event.city)}</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-label">📂 Category</div>
+                            <div class="data-card-value">${escapeHtml(event.category || 'Uncategorized')}</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-label">👥 Age Restriction</div>
+                            <div class="data-card-value">${event.age_restriction || 'All ages'}</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-label">🎟️ Ticket URL</div>
+                            <div class="data-card-value">
+                                ${event.ticket_url ?
+                                    `<a href="${event.ticket_url}" target="_blank" style="color: #667eea;">Get Tickets →</a>` :
+                                    'Not available'}
+                            </div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-label">🔗 Source</div>
+                            <div class="data-card-value">
+                                ${event.source_url ?
+                                    `<a href="${event.source_url}" target="_blank" style="color: #667eea;">View Source →</a>` :
+                                    'Unknown'}
+                            </div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-label">🆔 Event ID</div>
+                            <div class="data-card-value">${event.id}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Action buttons
+            html += `
+                <div class="actions">
+                    ${event.ticket_url ?
+                        `<a href="${event.ticket_url}" target="_blank" class="btn btn-primary">🎟️ Get Tickets</a>` :
+                        ''}
+                    ${event.source_url ?
+                        `<a href="${event.source_url}" target="_blank" class="btn btn-secondary">📄 View Source</a>` :
+                        ''}
+                    <button class="btn btn-secondary" onclick="shareEvent('${escapeHtml(event.title)}')">📤 Share Event</button>
+                </div>
+            `;
+
+            // Share section
+            html += `
+                <div class="share-section">
+                    <div class="share-title">Share This Event</div>
+                    <div class="share-buttons">
+                        <button class="share-btn" onclick="copyToClipboard()">📋 Copy Link</button>
+                        <button class="share-btn" onclick="shareToTwitter('${escapeHtml(event.title)}')">𝕏 Twitter</button>
+                        <button class="share-btn" onclick="shareToFacebook()">f Facebook</button>
+                    </div>
+                </div>
+            `;
+
+            content.innerHTML = html;
+
+            // Update page title
+            document.title = `${event.title} - SETX Events`;
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr + 'T00:00:00');
+            return date.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function showError(message) {
+            document.getElementById('content').innerHTML = `
+                <div class="error">
+                    <h3>❌ Error</h3>
+                    <p>${escapeHtml(message)}</p>
+                    <a href="/venues" class="btn btn-secondary" style="margin-top: 15px;">← Back to Venues</a>
+                </div>
+            `;
+        }
+
+        function shareEvent(title) {
+            alert(`Share "${title}":\n\n${window.location.href}`);
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Event link copied to clipboard!');
+            });
+        }
+
+        function shareToTwitter(title) {
+            const text = `Check out this event: ${title}`;
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank');
+        }
+
+        function shareToFacebook() {
+            const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank');
+        }
+
+        // Load event on page load
+        loadEvent();
+    </script>
+</body>
+</html>

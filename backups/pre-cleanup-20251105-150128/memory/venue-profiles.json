@@ -1,0 +1,867 @@
+{
+  "1": {
+    "venueId": 1,
+    "name": "Julie Rogers Theatre",
+    "city": "Beaumont",
+    "category": "Performing Arts",
+    "website": "http://www.julierogerstheatre.com/",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:19:33.691Z",
+        "agent": "perplexity",
+        "eventsLearned": 3
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Scarface Unplugged & Personal: Tiny Desk Show Performance",
+        "Symphony Concert – Beyond Boundaries: Beethoven Reimagined",
+        "Symphony Concert – A Holiday Spectacular!"
+      ],
+      "eventTimes": [
+        "8:30 PM",
+        "7:30 PM",
+        "Doors 7:00 PM, Show 7:30 PM"
+      ],
+      "eventCategories": [
+        "Performing Arts",
+        "Performing Arts",
+        "Performing Arts"
+      ],
+      "eventDescriptionPatterns": [
+        "Acclaimed Tiny Desk Show Performance by Scarface, ...",
+        "Symphony concert featuring a reimagined Beethoven ...",
+        "Holiday-themed symphony concert with reserved seat..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "2": {
+    "venueId": 2,
+    "name": "The Logon Cafe",
+    "city": "Beaumont",
+    "category": "Music Venue",
+    "website": "https://www.thelogoncafe.com/",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:19:42.077Z",
+        "agent": "perplexity",
+        "eventsLearned": 5
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Saturday Brunch",
+        "Saturday Brunch",
+        "Let the Logon make you Brunch today",
+        "Southeast Texas BeeKeepers Meeting",
+        "Open Mic Night"
+      ],
+      "eventTimes": [
+        "11:00 AM - 2:00 PM",
+        "11:00 AM - 2:00 PM",
+        "11:00 AM - 2:00 PM",
+        "Not specified",
+        "8:00 PM - 11:00 PM"
+      ],
+      "eventCategories": [
+        "Music Venue",
+        "Music Venue",
+        "Music Venue",
+        "Music Venue",
+        "Music Venue"
+      ],
+      "eventDescriptionPatterns": [
+        "Enjoy brunch with options like Big Booty Biscuit w...",
+        "Enjoy brunch with options like Big Booty Biscuit w...",
+        "Brunch event at The Logon Cafe.",
+        "Meeting of the Southeast Texas BeeKeepers at The L...",
+        "Open Mic Night event at The Logon Cafe."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "3": {
+    "venueId": 3,
+    "name": "Museum of the Gulf Coast",
+    "city": "Port Arthur",
+    "category": "Museum",
+    "website": "http://www.museumofthegulfcoast.org/",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:19:48.631Z",
+        "agent": "perplexity",
+        "eventsLearned": 3
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Exhibit on Display in the Dunn Gallery",
+        "Opening Reception for Exhibit in the Dunn Gallery",
+        "2025 Gulf Coast Gala"
+      ],
+      "eventTimes": [
+        "Museum hours 9:00 AM - 5:00 PM",
+        "6:00 PM - 8:00 PM",
+        "Starts at 5:30 PM"
+      ],
+      "eventCategories": [
+        "Museum",
+        "Museum",
+        "Museum Gala"
+      ],
+      "eventDescriptionPatterns": [
+        "Exhibit featuring the history of Port Arthur captu...",
+        "Opening reception celebrating the history of Port ...",
+        "Premier event featuring rare bourbon flights, sign..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "5": {
+    "venueId": 5,
+    "name": "Beaumont Civic Centre",
+    "city": "Beaumont",
+    "category": "Convention Center",
+    "website": "https://www.beaumonttexas.gov/234/Beaumont-Events",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:19:57.482Z",
+        "agent": "perplexity",
+        "eventsLearned": 3
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "William Lee Martin: The Funny Life Tour",
+        "Symphony Concert \"Beyond Boundaries: Beethoven Reimagined\"",
+        "Lamar University Wind Ensemble and Symphonic Band"
+      ],
+      "eventTimes": [
+        "Doors 6:30 PM, Show 7:30 PM",
+        "7:30 PM",
+        "Doors 7:00 PM, Show 7:30 PM"
+      ],
+      "eventCategories": [
+        "Convention Center",
+        "Convention Center",
+        "Convention Center"
+      ],
+      "eventDescriptionPatterns": [
+        "Comedy show featuring William Lee Martin. Ticket p...",
+        "Symphony concert reimagining Beethoven's works. Se...",
+        "Free concert featuring Lamar University Wind Ensem..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "8": {
+    "venueId": 8,
+    "name": "Jefferson Theatre",
+    "city": "Beaumont",
+    "category": "Theater",
+    "website": "https://www.beaumonttexas.gov/234/Beaumont-Events",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:20:13.185Z",
+        "agent": "perplexity",
+        "eventsLearned": 6
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "William Lee Martin: The Funny Life Tour",
+        "Classic Movie Night: It's a Wonderful Life - Beaumont",
+        "Elf In Concert - Beaumont",
+        "The Polar Express - Beaumont",
+        "Henry Cho",
+        "Whose Live Anyway?"
+      ],
+      "eventTimes": [
+        "7:30 PM",
+        "7:00 PM",
+        "7:00 PM",
+        "2:00 PM",
+        "8:00 PM",
+        "7:30 PM"
+      ],
+      "eventCategories": [
+        "Comedy, Country",
+        "Theater",
+        "Theater",
+        "Theater",
+        "Comedy",
+        "Comedy"
+      ],
+      "eventDescriptionPatterns": [
+        "A live comedy and country music performance by Wil...",
+        "Screening of the classic movie 'It's a Wonderful L...",
+        "A live concert performance of the holiday favorite...",
+        "A theatrical presentation of the beloved holiday s...",
+        "Stand-up comedy show featuring Henry Cho.",
+        "An improvisational comedy show based on the TV sho..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "9": {
+    "venueId": 9,
+    "name": "Downtown Event Centre",
+    "city": "Beaumont",
+    "category": "Event Hall",
+    "website": "https://www.beaumontcvb.com/meetings/venues/special-events-venues/",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:20:20.219Z",
+        "agent": "perplexity",
+        "eventsLearned": 4
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "William Lee Martin: The Funny Life Tour",
+        "Symphony Concert \"Beyond Boundaries: Beethoven Reimagined\"",
+        "Lamar University Wind Ensemble and Symphonic Band",
+        "City of Beaumont Tree Lighting 2025"
+      ],
+      "eventTimes": [
+        "Doors 6:30 PM Show 7:30 PM",
+        "Doors 7:00 PM Show 7:30 PM",
+        "5:00 PM – 7:30 PM"
+      ],
+      "eventCategories": [
+        "Event Hall",
+        "Event Hall",
+        "Event Hall",
+        "Event Hall"
+      ],
+      "eventDescriptionPatterns": [
+        "Comedy show featuring William Lee Martin.",
+        "Symphony concert featuring Beethoven reimagined.",
+        "Free concert featuring Lamar University Wind Ensem...",
+        "Annual tree lighting event with food vendors and f..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "10": {
+    "venueId": 10,
+    "name": "Art Museum of Southeast Texas",
+    "city": "Beaumont",
+    "category": "Museum",
+    "website": "https://www.amset.org",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:01.457Z",
+        "agent": "perplexity",
+        "eventsLearned": 2
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "A Legacy of Collecting: Beaumont Art Museum",
+        "Marc-Antony Guillory: We Have, Always"
+      ],
+      "eventTimes": [
+        "Museum Hours",
+        "Museum Hours"
+      ],
+      "eventCategories": [
+        "Museum",
+        "Museum"
+      ],
+      "eventDescriptionPatterns": [
+        "Exhibition tracing the museum’s first 37 years, sh...",
+        "Summer 2025 Cafe Arts exhibition featuring works b..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "11": {
+    "venueId": 11,
+    "name": "Ford Park Entertainment Complex",
+    "city": "Beaumont",
+    "category": "Entertainment Complex",
+    "website": "https://www.fordpark.com",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:20:28.097Z",
+        "agent": "perplexity",
+        "eventsLearned": 3
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Food Truck Mania",
+        "SCA Battle of the Lone Star Championship",
+        "Mannheim Steamroller Christmas by Chip Davis"
+      ],
+      "eventTimes": [
+        "TBD",
+        "TBD",
+        "TBD"
+      ],
+      "eventCategories": [
+        "Entertainment Complex",
+        "Entertainment Complex",
+        "Entertainment Complex"
+      ],
+      "eventDescriptionPatterns": [
+        "An event featuring a variety of food trucks offeri...",
+        "A championship event hosted by the Society for Cre...",
+        "A holiday concert featuring Mannheim Steamroller C..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "12": {
+    "venueId": 12,
+    "name": "The Venue at Belle Oaks",
+    "city": "Beaumont",
+    "category": "Banquet Hall",
+    "website": "https://www.thevenueatbelleoaks.com",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:12.134Z",
+        "agent": "perplexity",
+        "eventsLearned": 4
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Jason Boland & The Stragglers with Candi Jenkins",
+        "Tracy Byrd",
+        "Casey and Jack LIVE at Belle Oaks",
+        "Kolby Cooper"
+      ],
+      "eventTimes": [
+        "Evening (exact time not specified)",
+        "Evening (exact time not specified)",
+        "6:00 PM",
+        "7:00 PM"
+      ],
+      "eventCategories": [
+        "Concert",
+        "Concert",
+        "Concert",
+        "Concert"
+      ],
+      "eventDescriptionPatterns": [
+        "Live music performance by Jason Boland & The Strag...",
+        "Live music performance by Tracy Byrd.",
+        "Live music concert featuring Casey and Jack with V...",
+        "Live concert performance by Kolby Cooper."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "15": {
+    "venueId": 15,
+    "name": "Courville's",
+    "city": "Beaumont",
+    "category": "Music Venue",
+    "website": "https://www.courvilles.com",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:21.043Z",
+        "agent": "perplexity",
+        "eventsLearned": 3
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Fight Like Damian Fundraiser Night",
+        "Mason Lively Live in Concert",
+        "Wilder Blue Concert"
+      ],
+      "eventTimes": [
+        "06:00 PM",
+        "08:00 PM",
+        "Doors at 6:30 PM"
+      ],
+      "eventCategories": [
+        "Music Venue",
+        "Music Venue",
+        "Music Venue"
+      ],
+      "eventDescriptionPatterns": [
+        "Fundraiser night event at Courville's.",
+        "Live concert performance by Mason Lively.",
+        "Live concert by Wilder Blue. Tickets on sale from ..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "16": {
+    "venueId": 16,
+    "name": "Cattail Marsh Scenic Wetlands & Boardwalk",
+    "city": "Beaumont",
+    "category": "Outdoor Venue",
+    "website": "https://www.beaumontcvb.com/meetings/venues/",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:25.075Z",
+        "agent": "perplexity",
+        "eventsLearned": 2
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Saturday Yoga @ Cattail",
+        "Cattail Marsh Van Tours"
+      ],
+      "eventTimes": [
+        "9:30 AM",
+        "3:00 PM - 3:30 PM"
+      ],
+      "eventCategories": [
+        "Outdoor Venue",
+        "Outdoor Venue"
+      ],
+      "eventDescriptionPatterns": [
+        "A yoga session held outdoors at the scenic wetland...",
+        "Guided van tours exploring the 900-acre scenic wet..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "17": {
+    "venueId": 17,
+    "name": "Holiday Inn Beaumont",
+    "city": "Beaumont",
+    "category": "Hotel",
+    "website": "https://www.ihg.com/holidayinn/hotels/us/en/beaumont/bmtph/hoteldetail",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:31.406Z",
+        "agent": "perplexity",
+        "eventsLearned": 3
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Couture for a Cause",
+        "Texas Youth Advisory Commission Summit",
+        "Sugar Plum Breakfast"
+      ],
+      "eventTimes": [
+        "10:00 AM - 3:00 PM",
+        "Time not specified",
+        "Time not specified"
+      ],
+      "eventCategories": [
+        "Hotel",
+        "Hotel",
+        "Hotel"
+      ],
+      "eventDescriptionPatterns": [
+        "A special brunch edition featuring Southeast Texas...",
+        "Summit event for youth advisory commission.",
+        "Fundraiser event for BCB."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "19": {
+    "venueId": 19,
+    "name": "Quality Inn and Suites",
+    "city": "Beaumont",
+    "category": "Hotel",
+    "website": "https://www.choicehotels.com/texas/beaumont/quality-inn-hotels/tx020",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:22:26.451Z",
+        "agent": "perplexity",
+        "eventsLearned": 1
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "No upcoming events found"
+      ],
+      "eventTimes": [
+        "N/A"
+      ],
+      "eventCategories": [
+        "Hotel"
+      ],
+      "eventDescriptionPatterns": [
+        "No confirmed upcoming events were found at Quality..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "20": {
+    "venueId": 20,
+    "name": "The Venue at Max Bowl",
+    "city": "Port Arthur",
+    "category": "Event Center / Banquet Hall",
+    "website": "https://visitportarthurtx.com/meeting-professionals-sports/the-venue-at-max-bowl/",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:37.000Z",
+        "agent": "perplexity",
+        "eventsLearned": 1
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Holiday Showcase 2025 | Max Bowl Port Arthur"
+      ],
+      "eventTimes": [
+        "8:00 PM"
+      ],
+      "eventCategories": [
+        "Event Center / Banquet Hall"
+      ],
+      "eventDescriptionPatterns": [
+        "Holiday Showcase event featuring Drag Bingo and ot..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "22": {
+    "venueId": 22,
+    "name": "Bowers Civic Center",
+    "city": "Port Arthur",
+    "category": "Convention Center / Civic Center",
+    "website": "https://www.portarthurtx.gov/facilities/facility/details/Bowers-Civic-Center-1",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:20:36.687Z",
+        "agent": "perplexity",
+        "eventsLearned": 2
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Port Arthur Education Foundation \"BACK TO THE 80's\"",
+        "PCRMM Annual Gala"
+      ],
+      "eventTimes": [
+        "06:00 PM",
+        "06:00 PM"
+      ],
+      "eventCategories": [
+        "Convention Center / Civic Center",
+        "Convention Center / Civic Center"
+      ],
+      "eventDescriptionPatterns": [
+        "A themed event hosted by the Port Arthur Education...",
+        "Annual gala event hosted by the Port City Railroad..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "24": {
+    "venueId": 24,
+    "name": "Port Arthur Public Library",
+    "city": "Port Arthur",
+    "category": "Community Center / Cultural Venue",
+    "website": "https://www.portarthurtx.gov/department/?structureid=18",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:22:34.881Z",
+        "agent": "perplexity",
+        "eventsLearned": 2
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Hora de cuentos en familia",
+        "Music and Movement"
+      ],
+      "eventTimes": [
+        "10:00 AM - 10:30 AM",
+        "10:00 AM - 10:30 AM"
+      ],
+      "eventCategories": [
+        "Community Center / Cultural Venue",
+        "Community Center / Cultural Venue"
+      ],
+      "eventDescriptionPatterns": [
+        "Family storytime event at the library.",
+        "Children's music and movement session organized by..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "25": {
+    "venueId": 25,
+    "name": "Port Arthur Civic Center",
+    "city": "Port Arthur",
+    "category": "Convention Center / Civic Center",
+    "website": "https://www.portarthurtx.gov/facilities/facility/details/Bowers-Civic-Center-1",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:20:44.340Z",
+        "agent": "perplexity",
+        "eventsLearned": 3
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Port Arthur Education Foundation \"BACK TO THE 80's\"",
+        "PA TLOD 60th Anniversary",
+        "City Council Regular Meeting"
+      ],
+      "eventTimes": [
+        "06:00 PM",
+        "06:00 PM",
+        "09:30 AM"
+      ],
+      "eventCategories": [
+        "Convention Center / Civic Center",
+        "Convention Center / Civic Center",
+        "Convention Center / Civic Center"
+      ],
+      "eventDescriptionPatterns": [
+        "An event hosted by the Port Arthur Education Found...",
+        "Celebration of the 60th Anniversary of PA TLOD at ...",
+        "Regular City Council meeting held at the Bowers Ci..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "34": {
+    "venueId": 34,
+    "name": "Riverfront Boardwalk and Pavilion",
+    "city": "Orange",
+    "category": "Outdoor Venue / Pavilion",
+    "website": "https://orangetexas.gov/340/Venue-Rentals",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:40.907Z",
+        "agent": "perplexity",
+        "eventsLearned": 1
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Picnic at the Pavilion"
+      ],
+      "eventTimes": [
+        "11:00 AM - 2:00 PM"
+      ],
+      "eventCategories": [
+        "Outdoor Venue / Pavilion"
+      ],
+      "eventDescriptionPatterns": [
+        "Weekly community picnic event held every Wednesday..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "35": {
+    "venueId": 35,
+    "name": "Riverside Pavilion",
+    "city": "Orange",
+    "category": "Outdoor Venue / Pavilion",
+    "website": "https://orangetexas.gov/340/Venue-Rentals",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:21:50.634Z",
+        "agent": "perplexity",
+        "eventsLearned": 4
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Orangetober Festival",
+        "Orangetober Festival",
+        "Orangetober Festival",
+        "Orange Recreation Center Easter Egg Hunt"
+      ],
+      "eventTimes": [
+        "All Day",
+        "All Day",
+        "All Day",
+        "9:00 AM"
+      ],
+      "eventCategories": [
+        "Outdoor Venue / Pavilion",
+        "Outdoor Venue / Pavilion",
+        "Outdoor Venue / Pavilion",
+        "Outdoor Venue / Pavilion"
+      ],
+      "eventDescriptionPatterns": [
+        "The 5th Annual Orangetober Festival features tours...",
+        "The 5th Annual Orangetober Festival features tours...",
+        "The 5th Annual Orangetober Festival features tours...",
+        "Join the Orange Recreation Center for their Easter..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "41": {
+    "venueId": 41,
+    "name": "Shangri La Botanical Gardens & Nature Center",
+    "city": "Orange",
+    "category": "Botanical Garden / Cultural Center",
+    "website": "https://shangrilagardens.org",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:20:47.670Z",
+        "agent": "perplexity",
+        "eventsLearned": 1
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Christmas Strolls"
+      ],
+      "eventTimes": [
+        "6:00 PM to 9:30 PM (last entry 8:30 PM)"
+      ],
+      "eventCategories": [
+        "Botanical Garden / Cultural Center"
+      ],
+      "eventDescriptionPatterns": [
+        "Evening holiday light strolls featuring festive de..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "49": {
+    "venueId": 49,
+    "name": "The Oaks Event Center",
+    "city": "Vidor",
+    "category": "Music Venue / Event Center",
+    "website": "https://theoakseventcenter.com",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:20:55.694Z",
+        "agent": "perplexity",
+        "eventsLearned": 1
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Ryan Foret & Foret Tradition"
+      ],
+      "eventTimes": [
+        "7:00 PM"
+      ],
+      "eventCategories": [
+        "Music Venue / Event Center"
+      ],
+      "eventDescriptionPatterns": [
+        "Cajun meets swamp pop for a night of dancing. Bar ..."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "51": {
+    "venueId": 51,
+    "name": "Honky Tonk Texas",
+    "city": "Silsbee",
+    "category": "Music Venue / Bar",
+    "website": "https://www.honkytonktexas.us",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:22:14.053Z",
+        "agent": "perplexity",
+        "eventsLearned": 4
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Full Band @ Honky Tonk Texas",
+        "Wayne Toups Concert",
+        "Randall King Concert",
+        "Creed Fisher Concert"
+      ],
+      "eventTimes": [
+        "9:00 PM - 12:00 AM",
+        "Doors open 7:00 PM, Showtime around 9:00 PM",
+        "7:00 PM",
+        "7:00 PM"
+      ],
+      "eventCategories": [
+        "Music Venue / Bar",
+        "Music Venue / Bar",
+        "Music Venue / Bar",
+        "Music Venue / Bar"
+      ],
+      "eventDescriptionPatterns": [
+        "Live full band performance at Honky Tonk Texas.",
+        "Grammy Award Winner Wayne Toups live in concert. G...",
+        "Live concert by Randall King at Honky Tonk Texas.",
+        "Live concert by Creed Fisher at Honky Tonk Texas."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  },
+  "52": {
+    "venueId": 52,
+    "name": "The Foundry Venue",
+    "city": "Silsbee",
+    "category": "Event Venue / Banquet Hall",
+    "website": "https://thefoundryvenue.com",
+    "learningHistory": [
+      {
+        "timestamp": "2025-11-02T12:22:22.332Z",
+        "agent": "perplexity",
+        "eventsLearned": 6
+      }
+    ],
+    "patterns": {
+      "eventTitles": [
+        "Chezile - Wish You Were Here Pt 2 Tour",
+        "ASTN: What If This Tour...",
+        "The Mars Volta",
+        "Roy Wood Jr.: The Man of Many Fathers Book Tour",
+        "Vastive",
+        "RENE VACA 2025 TOUR"
+      ],
+      "eventTimes": [
+        "8:00 PM",
+        "8:00 PM",
+        "8:00 PM",
+        "7:30 PM",
+        "10:00 PM",
+        "7:00 PM"
+      ],
+      "eventCategories": [
+        "Event Venue / Banquet Hall",
+        "Event Venue / Banquet Hall",
+        "Event Venue / Banquet Hall",
+        "Event Venue / Banquet Hall",
+        "Event Venue / Banquet Hall",
+        "Event Venue / Banquet Hall"
+      ],
+      "eventDescriptionPatterns": [
+        "Live concert tour performance by Chezile.",
+        "Live concert tour performance by ASTN.",
+        "Live concert by The Mars Volta.",
+        "Comedy and book tour event featuring Roy Wood Jr.",
+        "Live music performance by Vastive.",
+        "Concert tour performance by Rene Vaca."
+      ]
+    },
+    "successfulScrapesCount": 1,
+    "lastLearningFrom": "perplexity"
+  }
+}

@@ -1,0 +1,89 @@
+# SETX Events .gitignore
+# Rename this to .gitignore and commit it after first push
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database files (keep in repo initially, but exclude for deployment)
+# database.sqlite        # Uncomment if storing multiple snapshots
+# *.sqlite.backup        # Uncomment if storing backups in repo
+
+# Temporary files
+*.tmp
+*.temp
+/tmp
+/temp
+*.swp
+*.swo
+*~
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Backups
+backups/*.backup-*
+backups/*.db-*
+
+# Memory and cache
+memory/
+memory-system/
+*.cache
+.cache/
+
+# Image processing temp
+image-research-cache/*.tmp
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Archives
+*.zip
+*.tar.gz
+archive-*/
+
+# Build output
+dist/
+build/
+
+# Coverage
+coverage/
+
+# Process IDs
+*.pid
+*.seed
+*.pid.lock
+
+# Testing
+.nyc_output
+coverage
+
+# Sensitive data (add more as needed)
+*.key
+*.pem
+credentials.json
+secrets.json

@@ -1,0 +1,53 @@
+{"timestamp":"2025-11-02T14:26:50.888Z","level":"INFO","message":"Agent scheduler started (interval: every hour)"}
+{"timestamp":"2025-11-02T14:26:50.906Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T14:26:50.906Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T14:26:50.906Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T14:26:50.907Z","level":"INFO","message":"Cloud agent HTTP server started on port 3006"}
+{"timestamp":"2025-11-02T14:26:50.908Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T14:29:20.808Z","level":"INFO","message":"Shutting down on SIGTERM"}
+{"timestamp":"2025-11-02T14:29:21.838Z","level":"INFO","message":"Agent scheduler started (interval: every hour)"}
+{"timestamp":"2025-11-02T14:29:21.840Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T14:29:21.840Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T14:29:21.840Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T14:29:21.841Z","level":"INFO","message":"Cloud agent HTTP server started on port 3006"}
+{"timestamp":"2025-11-02T14:29:21.841Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T15:29:21.867Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T15:29:21.867Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T15:29:21.867Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T15:29:21.867Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T16:29:21.891Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T16:29:21.891Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T16:29:21.892Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T16:29:21.892Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T17:29:21.911Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T17:29:21.911Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T17:29:21.911Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T17:29:21.911Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T18:29:21.927Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T18:29:21.927Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T18:29:21.927Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T18:29:21.927Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T19:29:21.942Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T19:29:21.942Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T19:29:21.942Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T19:29:21.942Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T20:29:21.952Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T20:29:21.952Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T20:29:21.952Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T20:29:21.952Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T21:29:21.956Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T21:29:21.957Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T21:29:21.957Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T21:29:21.957Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T22:29:21.960Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T22:29:21.960Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T22:29:21.960Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T22:29:21.960Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-02T23:29:21.961Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-02T23:29:21.961Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-02T23:29:21.962Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-02T23:29:21.963Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}
+{"timestamp":"2025-11-03T00:29:21.989Z","level":"INFO","message":"Cloud Venue Discovery Agent started"}
+{"timestamp":"2025-11-03T00:29:21.989Z","level":"INFO","message":"Starting venue discovery"}
+{"timestamp":"2025-11-03T00:29:21.989Z","level":"ERROR","message":"PERPLEXITY_API_KEY not set"}
+{"timestamp":"2025-11-03T00:29:21.989Z","level":"ERROR","message":"Discovery failed","data":{"success":false,"error":"PERPLEXITY_API_KEY environment variable required"}}

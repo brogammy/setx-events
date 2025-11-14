@@ -1,0 +1,13 @@
+{
+  "title": "Jazz Festival 2025",
+  "venue_name": "Julie Rogers Theatre",
+  "category": "Music",
+  "imageUrls": [],
+  "confidence": 0,
+  "methods_used": [
+    "source_scrape",
+    "pattern_search",
+    "validation"
+  ],
+  "timestamp": "2025-11-02T14:22:10.137Z"
+}

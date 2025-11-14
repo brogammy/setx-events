@@ -1,0 +1,279 @@
+[
+  {
+    "timestamp": "2025-11-02T12:22:43.775Z",
+    "topVenuesForLearning": [
+      {
+        "name": "Julie Rogers Theatre",
+        "learns": 1
+      },
+      {
+        "name": "The Logon Cafe",
+        "learns": 1
+      },
+      {
+        "name": "Museum of the Gulf Coast",
+        "learns": 1
+      },
+      {
+        "name": "Beaumont Civic Centre",
+        "learns": 1
+      },
+      {
+        "name": "Jefferson Theatre",
+        "learns": 1
+      },
+      {
+        "name": "Downtown Event Centre",
+        "learns": 1
+      },
+      {
+        "name": "Art Museum of Southeast Texas",
+        "learns": 1
+      },
+      {
+        "name": "Ford Park Entertainment Complex",
+        "learns": 1
+      },
+      {
+        "name": "The Venue at Belle Oaks",
+        "learns": 1
+      },
+      {
+        "name": "Courville's",
+        "learns": 1
+      }
+    ],
+    "agentComparison": {
+      "perplexity": {
+        "successRate": 0.8732394366197183,
+        "eventsScraped": 62,
+        "duplicateDetectionRate": 0.11428571428571428,
+        "errorHandlingRate": 0
+      }
+    },
+    "commonErrors": {},
+    "bestPerformingVenues": [],
+    "recommendedFocusAreas": []
+  },
+  {
+    "timestamp": "2025-11-02T12:22:43.931Z",
+    "topVenuesForLearning": [
+      {
+        "name": "Julie Rogers Theatre",
+        "learns": 1
+      },
+      {
+        "name": "The Logon Cafe",
+        "learns": 1
+      },
+      {
+        "name": "Museum of the Gulf Coast",
+        "learns": 1
+      },
+      {
+        "name": "Beaumont Civic Centre",
+        "learns": 1
+      },
+      {
+        "name": "Jefferson Theatre",
+        "learns": 1
+      },
+      {
+        "name": "Downtown Event Centre",
+        "learns": 1
+      },
+      {
+        "name": "Art Museum of Southeast Texas",
+        "learns": 1
+      },
+      {
+        "name": "Ford Park Entertainment Complex",
+        "learns": 1
+      },
+      {
+        "name": "The Venue at Belle Oaks",
+        "learns": 1
+      },
+      {
+        "name": "Courville's",
+        "learns": 1
+      }
+    ],
+    "agentComparison": {
+      "perplexity": {
+        "successRate": 0.8732394366197183,
+        "eventsScraped": 62,
+        "duplicateDetectionRate": 0.11428571428571428,
+        "errorHandlingRate": 0
+      }
+    },
+    "commonErrors": {},
+    "bestPerformingVenues": [],
+    "recommendedFocusAreas": []
+  },
+  {
+    "timestamp": "2025-11-02T12:22:51.837Z",
+    "topVenuesForLearning": [
+      {
+        "name": "Julie Rogers Theatre",
+        "learns": 1
+      },
+      {
+        "name": "The Logon Cafe",
+        "learns": 1
+      },
+      {
+        "name": "Museum of the Gulf Coast",
+        "learns": 1
+      },
+      {
+        "name": "Beaumont Civic Centre",
+        "learns": 1
+      },
+      {
+        "name": "Jefferson Theatre",
+        "learns": 1
+      },
+      {
+        "name": "Downtown Event Centre",
+        "learns": 1
+      },
+      {
+        "name": "Art Museum of Southeast Texas",
+        "learns": 1
+      },
+      {
+        "name": "Ford Park Entertainment Complex",
+        "learns": 1
+      },
+      {
+        "name": "The Venue at Belle Oaks",
+        "learns": 1
+      },
+      {
+        "name": "Courville's",
+        "learns": 1
+      }
+    ],
+    "agentComparison": {
+      "perplexity": {
+        "successRate": 0.8732394366197183,
+        "eventsScraped": 62,
+        "duplicateDetectionRate": 0.11428571428571428,
+        "errorHandlingRate": 0
+      }
+    },
+    "commonErrors": {},
+    "bestPerformingVenues": [],
+    "recommendedFocusAreas": []
+  },
+  {
+    "timestamp": "2025-11-02T12:22:52.037Z",
+    "topVenuesForLearning": [
+      {
+        "name": "Julie Rogers Theatre",
+        "learns": 1
+      },
+      {
+        "name": "The Logon Cafe",
+        "learns": 1
+      },
+      {
+        "name": "Museum of the Gulf Coast",
+        "learns": 1
+      },
+      {
+        "name": "Beaumont Civic Centre",
+        "learns": 1
+      },
+      {
+        "name": "Jefferson Theatre",
+        "learns": 1
+      },
+      {
+        "name": "Downtown Event Centre",
+        "learns": 1
+      },
+      {
+        "name": "Art Museum of Southeast Texas",
+        "learns": 1
+      },
+      {
+        "name": "Ford Park Entertainment Complex",
+        "learns": 1
+      },
+      {
+        "name": "The Venue at Belle Oaks",
+        "learns": 1
+      },
+      {
+        "name": "Courville's",
+        "learns": 1
+      }
+    ],
+    "agentComparison": {
+      "perplexity": {
+        "successRate": 0.8732394366197183,
+        "eventsScraped": 62,
+        "duplicateDetectionRate": 0.11428571428571428,
+        "errorHandlingRate": 0
+      },
+      "ollama-local": {
+        "successRate": 0,
+        "eventsScraped": 0,
+        "duplicateDetectionRate": 0,
+        "errorHandlingRate": 40
+      }
+    },
+    "commonErrors": {
+      "scraping_error": {
+        "count": 40,
+        "resolutions": [
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis",
+          "logged_for_analysis"
+        ],
+        "lastOccurrence": "2025-11-02T12:22:52.036Z"
+      }
+    },
+    "bestPerformingVenues": [],
+    "recommendedFocusAreas": []
+  }
+]

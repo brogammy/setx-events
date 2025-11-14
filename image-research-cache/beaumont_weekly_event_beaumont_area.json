@@ -1,0 +1,13 @@
+{
+  "title": "Beaumont Weekly Event",
+  "venue_name": "Beaumont Area",
+  "category": "Community Event",
+  "imageUrls": [],
+  "confidence": 0,
+  "methods_used": [
+    "source_scrape",
+    "pattern_search",
+    "validation"
+  ],
+  "timestamp": "2025-11-02T14:34:58.701Z"
+}

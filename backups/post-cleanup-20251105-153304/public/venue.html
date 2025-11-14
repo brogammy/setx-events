@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue Details - SETX Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .hero {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .venue-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .venue-header {
+            padding: 40px;
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .venue-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .venue-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .venue-title {
+            flex: 1;
+        }
+
+        .venue-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .venue-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .venue-description {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .venue-city {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .main-content h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            width: 30px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .contact-content {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .contact-value a {
+            color: #667eea;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        .social-section {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .events-list {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #f0f0f0;
+        }
+
+        .event-item {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .event-item:last-child {
+            border-bottom: none;
+        }
+
+        .event-date {
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 60px;
+            flex-shrink: 0;
+        }
+
+        .event-info {
+            flex: 1;
+        }
+
+        .event-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .event-time {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .event-item-link {
+            display: block;
+            transition: background-color 0.2s;
+        }
+
+        .event-item-link:hover {
+            background-color: #f9f9f9;
+        }
+
+        .event-item-link:hover .event-title {
+            color: #667eea;
+        }
+
+        .sidebar {
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .sidebar h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .sidebar-item {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-value {
+            font-size: 16px;
+            color: #333;
+            word-break: break-word;
+        }
+
+        .sidebar-value a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .sidebar-value a:hover {
+            text-decoration: underline;
+        }
+
+        .no-events {
+            padding: 40px 20px;
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .loading {
+            padding: 40px 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        .error {
+            padding: 40px 20px;
+            text-align: center;
+            color: #d32f2f;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 250px;
+            }
+
+            .venue-header {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-name {
+                font-size: 24px;
+            }
+
+            .back-button {
+                top: 10px;
+                left: 10px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .container {
+                margin: -30px auto 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="history.back()">← Back</button>
+
+    <div class="hero" id="hero">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="venue-card">
+            <!-- Header -->
+            <div class="venue-header" id="venueHeader">
+                <div class="loading">Loading venue details...</div>
+            </div>
+
+            <!-- Content -->
+            <div class="content-grid" id="contentGrid"></div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab, event) {
+            if (event) event.preventDefault();
+
+            const listView = document.getElementById('listView');
+            const galleryView = document.getElementById('galleryView');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => {
+                btn.style.background = '#f0f0f0';
+                btn.style.color = '#333';
+            });
+
+            if (tab === 'list') {
+                listView.style.display = 'block';
+                galleryView.style.display = 'none';
+                buttons[0].style.background = '#667eea';
+                buttons[0].style.color = 'white';
+            } else {
+                listView.style.display = 'none';
+                galleryView.style.display = 'block';
+                buttons[1].style.background = '#667eea';
+                buttons[1].style.color = 'white';
+            }
+        }
+
+        async function loadVenueDetails() {
+            try {
+                // Get venue ID from URL
+                const pathParts = window.location.pathname.split('/');
+                const venueId = pathParts[pathParts.length - 1];
+
+                if (!venueId || isNaN(venueId)) {
+                    document.getElementById('venueHeader').innerHTML =
+                        '<div class="error">Invalid venue ID</div>';
+                    return;
+                }
+
+                // Fetch venue data
+                const response = await fetch(`/api/venues/${venueId}`);
+                if (!response.ok) throw new Error('Venue not found');
+
+                const venue = await response.json();
+
+                // Set hero image
+                const hero = document.getElementById('hero');
+                if (venue.cover_image_url) {
+                    hero.innerHTML = `
+                        <img src="${venue.cover_image_url}" alt="${venue.name}">
+                        <div class="hero-overlay"></div>
+                        <button class="back-button" onclick="history.back()">← Back</button>
+                    `;
+                } else {
+                    const backBtn = hero.querySelector('.back-button');
+                    if (!backBtn) {
+                        const btn = document.createElement('button');
+                        btn.className = 'back-button';
+                        btn.onclick = () => history.back();
+                        btn.textContent = '← Back';
+                        hero.appendChild(btn);
+                    }
+                }
+
+                // Set page title
+                document.title = `${venue.name} - SETX Events`;
+
+                // Render header
+                const headerHTML = `
+                    ${venue.logo_url ? `
+                        <div class="venue-logo">
+                            <img src="${venue.logo_url}" alt="${venue.name} logo">
+                        </div>
+                    ` : ''}
+                    <div class="venue-title">
+                        <div class="venue-name">${venue.name}</div>
+                        ${venue.category ? `<div class="venue-category">${venue.category}</div>` : ''}
+                        ${venue.description ? `<div class="venue-description">${venue.description}</div>` : ''}
+                        <div class="venue-city">📍 ${venue.city}, Texas</div>
+                    </div>
+                `;
+                document.getElementById('venueHeader').innerHTML = headerHTML;
+
+                // Render content
+                const eventsHTML = venue.events && venue.events.length > 0
+                    ? `
+                        <div class="events-list">
+                            ${venue.events.map(event => `
+                                <a href="/event/${event.id}" class="event-item-link" style="text-decoration: none; color: inherit;">
+                                    <div class="event-item">
+                                        <div class="event-date">
+                                            ${new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                                        </div>
+                                        <div class="event-info">
+                                            <div class="event-title">${event.title}</div>
+                                            ${event.time ? `<div class="event-time">🕐 ${event.time}</div>` : ''}
+                                        </div>
+                                        <div style="margin-left: auto; font-size: 18px; opacity: 0.5;">→</div>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    `
+                    : '<div class="no-events">No upcoming events scheduled.</div>';
+
+                const contentHTML = `
+                    <div class="main-content">
+                        <h2>Contact Information</h2>
+                        <div class="info-section">
+                            ${venue.phone ? `
+                                <div class="contact-item">
+                                    <div class="contact-icon">📞</div>
+                                    <div class="contact-content">
+                                        <div class="contact-label">Phone</div>
+                                        <div class="contact-value">
+                                            <a href="tel:${venue.phone}">${venue.phone}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            ` : ''}
+                            ${venue.email ? `
+                                <div class="contact-item">
+                                    <div class="contact-icon">✉️</div>
+                                    <div class="contact-content">
+                                        <div class="contact-label">Email</div>
+                                        <div class="contact-value">
+                                            <a href="mailto:${venue.email}">${venue.email}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            ` : ''}
+                            ${venue.address ? `
+                                <div class="contact-item">
+                                    <div class="contact-icon">📍</div>
+                                    <div class="contact-content">
+                                        <div class="contact-label">Address</div>
+                                        <div class="contact-value">${venue.address}</div>
+                                    </div>
+                                </div>
+                            ` : ''}
+                            ${venue.website ? `
+                                <div class="contact-item">
+                                    <div class="contact-icon">🌐</div>
+                                    <div class="contact-content">
+                                        <div class="contact-label">Website</div>
+                                        <div class="contact-value">
+                                            <a href="${venue.website}" target="_blank">Visit Website</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            ` : ''}
+                        </div>
+
+                        ${venue.facebook_url || venue.instagram_url ? `
+                            <div class="info-section">
+                                <h2>Follow Us</h2>
+                                <div class="social-section">
+                                    ${venue.facebook_url ? `
+                                        <a href="${venue.facebook_url}" target="_blank" class="social-btn">
+                                            👍 Facebook
+                                        </a>
+                                    ` : ''}
+                                    ${venue.instagram_url ? `
+                                        <a href="https://instagram.com/${venue.instagram_url.replace('@', '')}" target="_blank" class="social-btn">
+                                            📷 Instagram
+                                        </a>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        <h2>📅 Upcoming Events</h2>
+                        <div style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #f0f0f0;">
+                            <button class="tab-btn active" onclick="switchTab('list', event)" style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 6px 6px 0 0; cursor: pointer; font-weight: 600;">
+                                📋 List View
+                            </button>
+                            <button class="tab-btn" onclick="switchTab('gallery', event)" style="padding: 10px 20px; background: #f0f0f0; color: #333; border: none; border-radius: 6px 6px 0 0; cursor: pointer; font-weight: 600;">
+                                🖼️ Gallery View
+                            </button>
+                        </div>
+                        <div id="listView">${eventsHTML}</div>
+                        <div id="galleryView" style="display: none;">
+                            ${venue.events && venue.events.length > 0
+                                ? `<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                                    ${venue.events.map(event => `
+                                        <a href="/event/${event.id}" style="text-decoration: none; color: inherit;">
+                                            <div style="border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)';">
+                                                ${event.image_url ? `<img src="${event.image_url}" alt="${event.title}" style="width: 100%; height: 200px; object-fit: cover;">` : `<div style="width: 100%; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; padding: 10px;">No Image</div>`}
+                                                <div style="padding: 15px;">
+                                                    <div style="font-weight: 600; color: #333; margin-bottom: 8px;">${event.title}</div>
+                                                    <div style="font-size: 12px; color: #999; margin-bottom: 8px;">
+                                                        ${new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                                        ${event.time ? '• ' + event.time : ''}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    `).join('')}
+                                   </div>`
+                                : '<div class="no-events">No upcoming events scheduled.</div>'
+                            }
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <h3>📋 Quick Info</h3>
+
+                        ${venue.category ? `
+                            <div class="sidebar-item">
+                                <div class="sidebar-label">Category</div>
+                                <div class="sidebar-value">${venue.category}</div>
+                            </div>
+                        ` : ''}
+
+                        ${venue.city ? `
+                            <div class="sidebar-item">
+                                <div class="sidebar-label">City</div>
+                                <div class="sidebar-value">${venue.city}</div>
+                            </div>
+                        ` : ''}
+
+                        ${venue.priority ? `
+                            <div class="sidebar-item">
+                                <div class="sidebar-label">Priority</div>
+                                <div class="sidebar-value">
+                                    ${'⭐'.repeat(Math.min(venue.priority, 5))} (${venue.priority}/10)
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${venue.events && venue.events.length > 0 ? `
+                            <div class="sidebar-item">
+                                <div class="sidebar-label">Upcoming Events</div>
+                                <div class="sidebar-value">${venue.events.length}</div>
+                            </div>
+                        ` : ''}
+
+                        <div class="sidebar-item">
+                            <div class="sidebar-label">Last Updated</div>
+                            <div class="sidebar-value">
+                                ${new Date(venue.updated_at).toLocaleDateString()}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('contentGrid').innerHTML = contentHTML;
+            } catch (error) {
+                console.error('Error loading venue:', error);
+                document.getElementById('contentGrid').innerHTML =
+                    `<div class="error">Error loading venue details. Please try again.</div>`;
+            }
+        }
+
+        // Load on page load
+        window.addEventListener('load', loadVenueDetails);
+    </script>
+</body>
+</html>

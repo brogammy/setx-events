@@ -1,0 +1,38 @@
+{
+  "perplexity": {
+    "name": "perplexity",
+    "runs": [
+      {
+        "timestamp": "2025-11-02T12:22:43.617Z",
+        "eventsScraped": 62,
+        "duplicates": 8,
+        "errors": 0,
+        "successRate": 0.8732394366197183,
+        "executionTime": 198128
+      }
+    ],
+    "totalEventsScraped": 62,
+    "totalDuplicatesDetected": 8,
+    "totalErrorsHandled": 0,
+    "averageSuccessRate": 0.8732394366197183,
+    "costMetrics": {}
+  },
+  "ollama-local": {
+    "name": "ollama-local",
+    "runs": [
+      {
+        "timestamp": "2025-11-02T12:22:52.036Z",
+        "eventsScraped": 0,
+        "duplicates": 0,
+        "errors": 40,
+        "successRate": 0,
+        "executionTime": 221
+      }
+    ],
+    "totalEventsScraped": 0,
+    "totalDuplicatesDetected": 0,
+    "totalErrorsHandled": 40,
+    "averageSuccessRate": 0,
+    "costMetrics": {}
+  }
+}

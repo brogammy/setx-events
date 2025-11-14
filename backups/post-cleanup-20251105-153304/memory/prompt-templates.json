@@ -1,0 +1,370 @@
+{
+  "1_perplexity": {
+    "venueId": 1,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:19:33.691Z",
+        "prompt": "Extract upcoming events from Julie Rogers Theatre in Beaumont, Texas.\n\nWebsite: http://www.julierogerstheatre.com/\n\nDescription: Historic performing arts theater\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Julie Rogers Theatre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Performing Arts\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 3
+        },
+        "eventCount": 3
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Julie Rogers Theatre in Beaumont, Texas.\n\nWebsite: http://www.julierogerstheatre.com/\n\nDescription: Historic performing arts theater\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Julie Rogers Theatre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Performing Arts\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "2_perplexity": {
+    "venueId": 2,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:19:42.077Z",
+        "prompt": "Extract upcoming events from The Logon Cafe in Beaumont, Texas.\n\nWebsite: https://www.thelogoncafe.com/\n\nDescription: Local cafe and music venue\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Logon Cafe\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Music Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 5
+        },
+        "eventCount": 5
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from The Logon Cafe in Beaumont, Texas.\n\nWebsite: https://www.thelogoncafe.com/\n\nDescription: Local cafe and music venue\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Logon Cafe\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Music Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "3_perplexity": {
+    "venueId": 3,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:19:48.660Z",
+        "prompt": "Extract upcoming events from Museum of the Gulf Coast in Port Arthur, Texas.\n\nWebsite: http://www.museumofthegulfcoast.org/\n\nDescription: Gulf Coast cultural heritage museum\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Museum of the Gulf Coast\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Museum\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 3
+        },
+        "eventCount": 3
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Museum of the Gulf Coast in Port Arthur, Texas.\n\nWebsite: http://www.museumofthegulfcoast.org/\n\nDescription: Gulf Coast cultural heritage museum\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Museum of the Gulf Coast\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Museum\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "5_perplexity": {
+    "venueId": 5,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:19:57.482Z",
+        "prompt": "Extract upcoming events from Beaumont Civic Centre in Beaumont, Texas.\n\nWebsite: https://www.beaumonttexas.gov/234/Beaumont-Events\n\nDescription: A large downtown venue with a 29,300 sq. ft. arena, seating for up to 1,000, and full-service event support.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Beaumont Civic Centre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Convention Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 3
+        },
+        "eventCount": 3
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Beaumont Civic Centre in Beaumont, Texas.\n\nWebsite: https://www.beaumonttexas.gov/234/Beaumont-Events\n\nDescription: A large downtown venue with a 29,300 sq. ft. arena, seating for up to 1,000, and full-service event support.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Beaumont Civic Centre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Convention Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "8_perplexity": {
+    "venueId": 8,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:20:13.185Z",
+        "prompt": "Extract upcoming events from Jefferson Theatre in Beaumont, Texas.\n\nWebsite: https://www.beaumonttexas.gov/234/Beaumont-Events\n\nDescription: A historic theater with seating for 1,400, elegant lobby, and stage facilities for performances.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Jefferson Theatre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Theater\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 5
+        },
+        "eventCount": 5
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Jefferson Theatre in Beaumont, Texas.\n\nWebsite: https://www.beaumonttexas.gov/234/Beaumont-Events\n\nDescription: A historic theater with seating for 1,400, elegant lobby, and stage facilities for performances.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Jefferson Theatre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Theater\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "9_perplexity": {
+    "venueId": 9,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:20:20.220Z",
+        "prompt": "Extract upcoming events from Downtown Event Centre in Beaumont, Texas.\n\nWebsite: https://www.beaumontcvb.com/meetings/venues/special-events-venues/\n\nDescription: A 16,000 sq. ft. event hall with a scenic patio overlooking a lake, suitable for weddings and large gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Downtown Event Centre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Event Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 1
+        },
+        "eventCount": 1
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Downtown Event Centre in Beaumont, Texas.\n\nWebsite: https://www.beaumontcvb.com/meetings/venues/special-events-venues/\n\nDescription: A 16,000 sq. ft. event hall with a scenic patio overlooking a lake, suitable for weddings and large gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Downtown Event Centre\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Event Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "11_perplexity": {
+    "venueId": 11,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:20:28.104Z",
+        "prompt": "Extract upcoming events from Ford Park Entertainment Complex in Beaumont, Texas.\n\nWebsite: https://www.fordpark.com\nFacebook: https://www.facebook.com/FordParkBeaumont\nDescription: A multi-purpose complex with spaces for concerts, receptions, and large events, located in Tyrrell Park.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Ford Park Entertainment Complex\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Entertainment Complex\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 3
+        },
+        "eventCount": 3
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Ford Park Entertainment Complex in Beaumont, Texas.\n\nWebsite: https://www.fordpark.com\nFacebook: https://www.facebook.com/FordParkBeaumont\nDescription: A multi-purpose complex with spaces for concerts, receptions, and large events, located in Tyrrell Park.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Ford Park Entertainment Complex\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Entertainment Complex\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "22_perplexity": {
+    "venueId": 22,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:20:36.687Z",
+        "prompt": "Extract upcoming events from Bowers Civic Center in Port Arthur, Texas.\n\nWebsite: https://www.portarthurtx.gov/facilities/facility/details/Bowers-Civic-Center-1\n\nDescription: A large civic center with a 4,000 sq ft lobby, portable stage, sound/lighting control, and seating up to 1,488, suitable for concerts, conventions, and large events.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Bowers Civic Center\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Convention Center / Civic Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 2
+        },
+        "eventCount": 2
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Bowers Civic Center in Port Arthur, Texas.\n\nWebsite: https://www.portarthurtx.gov/facilities/facility/details/Bowers-Civic-Center-1\n\nDescription: A large civic center with a 4,000 sq ft lobby, portable stage, sound/lighting control, and seating up to 1,488, suitable for concerts, conventions, and large events.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Bowers Civic Center\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Convention Center / Civic Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "25_perplexity": {
+    "venueId": 25,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:20:44.340Z",
+        "prompt": "Extract upcoming events from Port Arthur Civic Center in Port Arthur, Texas.\n\nWebsite: https://www.portarthurtx.gov/facilities/facility/details/Bowers-Civic-Center-1\n\nDescription: Facility for conventions, concerts, and community events with large seating capacity and full amenities.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Port Arthur Civic Center\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Convention Center / Civic Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 2
+        },
+        "eventCount": 2
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Port Arthur Civic Center in Port Arthur, Texas.\n\nWebsite: https://www.portarthurtx.gov/facilities/facility/details/Bowers-Civic-Center-1\n\nDescription: Facility for conventions, concerts, and community events with large seating capacity and full amenities.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Port Arthur Civic Center\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Convention Center / Civic Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "41_perplexity": {
+    "venueId": 41,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:20:47.670Z",
+        "prompt": "Extract upcoming events from Shangri La Botanical Gardens & Nature Center in Orange, Texas.\n\nWebsite: https://shangrilagardens.org\n\nDescription: A 250+ acre botanical garden and education nature center offering scenic gardens and guided tours along Adams Bayou.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Shangri La Botanical Gardens & Nature Center\",\n    \"city\": \"Orange\",\n    \"category\": \"Botanical Garden / Cultural Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 1
+        },
+        "eventCount": 1
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Shangri La Botanical Gardens & Nature Center in Orange, Texas.\n\nWebsite: https://shangrilagardens.org\n\nDescription: A 250+ acre botanical garden and education nature center offering scenic gardens and guided tours along Adams Bayou.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Shangri La Botanical Gardens & Nature Center\",\n    \"city\": \"Orange\",\n    \"category\": \"Botanical Garden / Cultural Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "49_perplexity": {
+    "venueId": 49,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:20:55.694Z",
+        "prompt": "Extract upcoming events from The Oaks Event Center in Vidor, Texas.\n\nWebsite: https://theoakseventcenter.com\n\nDescription: A community event center hosting concerts, children activities, and family entertainment, with a rich musical legacy dating back to the late 1960s.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Oaks Event Center\",\n    \"city\": \"Vidor\",\n    \"category\": \"Music Venue / Event Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 1
+        },
+        "eventCount": 1
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from The Oaks Event Center in Vidor, Texas.\n\nWebsite: https://theoakseventcenter.com\n\nDescription: A community event center hosting concerts, children activities, and family entertainment, with a rich musical legacy dating back to the late 1960s.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Oaks Event Center\",\n    \"city\": \"Vidor\",\n    \"category\": \"Music Venue / Event Center\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "10_perplexity": {
+    "venueId": 10,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:01.457Z",
+        "prompt": "Extract upcoming events from Art Museum of Southeast Texas in Beaumont, Texas.\n\nWebsite: https://www.amset.org\nFacebook: https://www.facebook.com/AMSETBeaumont\nDescription: A museum offering event spaces in its café, foyer, lecture hall, and courtyard, surrounded by art.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Art Museum of Southeast Texas\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Museum\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 2
+        },
+        "eventCount": 2
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Art Museum of Southeast Texas in Beaumont, Texas.\n\nWebsite: https://www.amset.org\nFacebook: https://www.facebook.com/AMSETBeaumont\nDescription: A museum offering event spaces in its café, foyer, lecture hall, and courtyard, surrounded by art.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Art Museum of Southeast Texas\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Museum\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "12_perplexity": {
+    "venueId": 12,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:12.213Z",
+        "prompt": "Extract upcoming events from The Venue at Belle Oaks in Beaumont, Texas.\n\nWebsite: https://www.thevenueatbelleoaks.com\nFacebook: https://www.facebook.com/TheVenueAtBelleOaks\nDescription: A modern event center on 40 acres, suitable for weddings, banquets, and large gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Venue at Belle Oaks\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Banquet Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 4
+        },
+        "eventCount": 4
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from The Venue at Belle Oaks in Beaumont, Texas.\n\nWebsite: https://www.thevenueatbelleoaks.com\nFacebook: https://www.facebook.com/TheVenueAtBelleOaks\nDescription: A modern event center on 40 acres, suitable for weddings, banquets, and large gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Venue at Belle Oaks\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Banquet Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "15_perplexity": {
+    "venueId": 15,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:21.043Z",
+        "prompt": "Extract upcoming events from Courville's in Beaumont, Texas.\n\nWebsite: https://www.courvilles.com\nFacebook: https://www.facebook.com/courvilles\nDescription: A banquet facility hosting live music and intimate events, featuring acts from around the world.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Courville's\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Music Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 3
+        },
+        "eventCount": 3
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Courville's in Beaumont, Texas.\n\nWebsite: https://www.courvilles.com\nFacebook: https://www.facebook.com/courvilles\nDescription: A banquet facility hosting live music and intimate events, featuring acts from around the world.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Courville's\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Music Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "16_perplexity": {
+    "venueId": 16,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:25.076Z",
+        "prompt": "Extract upcoming events from Cattail Marsh Scenic Wetlands & Boardwalk in Beaumont, Texas.\n\nWebsite: https://www.beaumontcvb.com/meetings/venues/\n\nDescription: A scenic outdoor venue with boardwalks and wetlands, suitable for nature-themed events and gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Cattail Marsh Scenic Wetlands & Boardwalk\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Outdoor Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 2
+        },
+        "eventCount": 2
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Cattail Marsh Scenic Wetlands & Boardwalk in Beaumont, Texas.\n\nWebsite: https://www.beaumontcvb.com/meetings/venues/\n\nDescription: A scenic outdoor venue with boardwalks and wetlands, suitable for nature-themed events and gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Cattail Marsh Scenic Wetlands & Boardwalk\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Outdoor Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "17_perplexity": {
+    "venueId": 17,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:31.407Z",
+        "prompt": "Extract upcoming events from Holiday Inn Beaumont in Beaumont, Texas.\n\nWebsite: https://www.ihg.com/holidayinn/hotels/us/en/beaumont/bmtph/hoteldetail\nFacebook: https://www.facebook.com/HolidayInnBeaumont\nDescription: A hotel with event spaces suitable for meetings, conferences, and banquets.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Holiday Inn Beaumont\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Hotel\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 3
+        },
+        "eventCount": 3
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Holiday Inn Beaumont in Beaumont, Texas.\n\nWebsite: https://www.ihg.com/holidayinn/hotels/us/en/beaumont/bmtph/hoteldetail\nFacebook: https://www.facebook.com/HolidayInnBeaumont\nDescription: A hotel with event spaces suitable for meetings, conferences, and banquets.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Holiday Inn Beaumont\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Hotel\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "20_perplexity": {
+    "venueId": 20,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:37.001Z",
+        "prompt": "Extract upcoming events from The Venue at Max Bowl in Port Arthur, Texas.\n\nWebsite: https://visitportarthurtx.com/meeting-professionals-sports/the-venue-at-max-bowl/\n\nDescription: A versatile event center offering 8,266 sq ft with seating capacities for classroom, theatre, and banquet styles, including a large stage and full-service bar options.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Venue at Max Bowl\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Event Center / Banquet Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 1
+        },
+        "eventCount": 1
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from The Venue at Max Bowl in Port Arthur, Texas.\n\nWebsite: https://visitportarthurtx.com/meeting-professionals-sports/the-venue-at-max-bowl/\n\nDescription: A versatile event center offering 8,266 sq ft with seating capacities for classroom, theatre, and banquet styles, including a large stage and full-service bar options.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Venue at Max Bowl\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Event Center / Banquet Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "34_perplexity": {
+    "venueId": 34,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:40.908Z",
+        "prompt": "Extract upcoming events from Riverfront Boardwalk and Pavilion in Orange, Texas.\n\nWebsite: https://orangetexas.gov/340/Venue-Rentals\n\nDescription: A city-owned pavilion along the Sabine River designed for public use and special events to enhance tourism and quality of life.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Riverfront Boardwalk and Pavilion\",\n    \"city\": \"Orange\",\n    \"category\": \"Outdoor Venue / Pavilion\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 1
+        },
+        "eventCount": 1
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Riverfront Boardwalk and Pavilion in Orange, Texas.\n\nWebsite: https://orangetexas.gov/340/Venue-Rentals\n\nDescription: A city-owned pavilion along the Sabine River designed for public use and special events to enhance tourism and quality of life.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Riverfront Boardwalk and Pavilion\",\n    \"city\": \"Orange\",\n    \"category\": \"Outdoor Venue / Pavilion\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "35_perplexity": {
+    "venueId": 35,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:21:50.634Z",
+        "prompt": "Extract upcoming events from Riverside Pavilion in Orange, Texas.\n\nWebsite: https://orangetexas.gov/340/Venue-Rentals\n\nDescription: A pavilion facility for everyday use and reserved events, supporting community and private functions.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Riverside Pavilion\",\n    \"city\": \"Orange\",\n    \"category\": \"Outdoor Venue / Pavilion\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 4
+        },
+        "eventCount": 4
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Riverside Pavilion in Orange, Texas.\n\nWebsite: https://orangetexas.gov/340/Venue-Rentals\n\nDescription: A pavilion facility for everyday use and reserved events, supporting community and private functions.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Riverside Pavilion\",\n    \"city\": \"Orange\",\n    \"category\": \"Outdoor Venue / Pavilion\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "51_perplexity": {
+    "venueId": 51,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:22:14.053Z",
+        "prompt": "Extract upcoming events from Honky Tonk Texas in Silsbee, Texas.\n\nWebsite: https://www.honkytonktexas.us\nFacebook: https://www.facebook.com/HonkyTonkTx\nDescription: The best and largest dance floor in Southeast Texas offering homemade burgers, premium ribeyes, and weekly specials with a full-service bar.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Honky Tonk Texas\",\n    \"city\": \"Silsbee\",\n    \"category\": \"Music Venue / Bar\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 4
+        },
+        "eventCount": 4
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Honky Tonk Texas in Silsbee, Texas.\n\nWebsite: https://www.honkytonktexas.us\nFacebook: https://www.facebook.com/HonkyTonkTx\nDescription: The best and largest dance floor in Southeast Texas offering homemade burgers, premium ribeyes, and weekly specials with a full-service bar.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Honky Tonk Texas\",\n    \"city\": \"Silsbee\",\n    \"category\": \"Music Venue / Bar\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "52_perplexity": {
+    "venueId": 52,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:22:22.332Z",
+        "prompt": "Extract upcoming events from The Foundry Venue in Silsbee, Texas.\n\nWebsite: https://thefoundryvenue.com\n\nDescription: A modern industrial event space with indoor and outdoor areas designed for intimate gatherings and events, emphasizing family values and exceptional service.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Foundry Venue\",\n    \"city\": \"Silsbee\",\n    \"category\": \"Event Venue / Banquet Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 6
+        },
+        "eventCount": 6
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from The Foundry Venue in Silsbee, Texas.\n\nWebsite: https://thefoundryvenue.com\n\nDescription: A modern industrial event space with indoor and outdoor areas designed for intimate gatherings and events, emphasizing family values and exceptional service.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"The Foundry Venue\",\n    \"city\": \"Silsbee\",\n    \"category\": \"Event Venue / Banquet Hall\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "19_perplexity": {
+    "venueId": 19,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:22:26.452Z",
+        "prompt": "Extract upcoming events from Quality Inn and Suites in Beaumont, Texas.\n\nWebsite: https://www.choicehotels.com/texas/beaumont/quality-inn-hotels/tx020\nFacebook: https://www.facebook.com/QualityInnBeaumont\nDescription: A hotel with event spaces suitable for meetings and small gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Quality Inn and Suites\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Hotel\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 1
+        },
+        "eventCount": 1
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Quality Inn and Suites in Beaumont, Texas.\n\nWebsite: https://www.choicehotels.com/texas/beaumont/quality-inn-hotels/tx020\nFacebook: https://www.facebook.com/QualityInnBeaumont\nDescription: A hotel with event spaces suitable for meetings and small gatherings.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Quality Inn and Suites\",\n    \"city\": \"Beaumont\",\n    \"category\": \"Hotel\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  },
+  "24_perplexity": {
+    "venueId": 24,
+    "agent": "perplexity",
+    "prompts": [
+      {
+        "timestamp": "2025-11-02T12:22:34.882Z",
+        "prompt": "Extract upcoming events from Port Arthur Public Library in Port Arthur, Texas.\n\nWebsite: https://www.portarthurtx.gov/department/?structureid=18\n\nDescription: Public library hosting community events, cultural programs, and educational activities.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Port Arthur Public Library\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Community Center / Cultural Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+        "quality": {
+          "eventCount": 2
+        },
+        "eventCount": 2
+      }
+    ],
+    "bestPrompt": "Extract upcoming events from Port Arthur Public Library in Port Arthur, Texas.\n\nWebsite: https://www.portarthurtx.gov/department/?structureid=18\n\nDescription: Public library hosting community events, cultural programs, and educational activities.\n\nPlease search for current events at this venue and return a JSON array of events with this structure:\n[\n  {\n    \"title\": \"Event name\",\n    \"date\": \"YYYY-MM-DD\",\n    \"time\": \"HH:MM AM/PM or time range\",\n    \"location\": \"Port Arthur Public Library\",\n    \"city\": \"Port Arthur\",\n    \"category\": \"Community Center / Cultural Venue\",\n    \"description\": \"Brief description\",\n    \"source_url\": \"URL where you found this event\",\n    \"price\": \"Price if available\",\n    \"ticket_url\": \"Ticket purchase URL if available\"\n  }\n]\n\nOnly include events that are confirmed and upcoming (not past events).\nReturn valid JSON only, no additional text.",
+    "averageQuality": null
+  }
+}

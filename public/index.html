@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETX Events - Southeast Texas Event Calendar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #007bff;
+            --color-primary-hover: #357abd;
+            --color-bg: #ffffff;
+            --color-surface: #f8f9fa;
+            --color-text: #212529;
+            --color-text-secondary: #6c757d;
+            --color-border: #dee2e6;
+            --color-secondary: #f5a623;
+            --color-accent: #e74c3c;
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-heavy: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+        }
+
+            background: var(--color-primary);
+            color: white;
+        }
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .filters {
+            background: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .filter-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        select, input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .event-card {
+            background: var(--color-surface);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--color-border);
+            cursor: pointer;
+        }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .event-card.featured {
+            border: 2px solid var(--color-primary);
+            background: linear-gradient(135deg, var(--color-surface) 0%, rgba(33, 128, 141, 0.05) 100%);
+        }
+
+        .event-image {
+            width: calc(100% + 3rem);
+            margin: -1.5rem -1.5rem 1rem -1.5rem;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .event-image-placeholder {
+            width: calc(100% + 3rem);
+            margin: -1.5rem -1.5rem 1rem -1.5rem;
+            height: 200px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .event-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .badge-featured {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .badge-category {
+            background: rgba(33, 128, 141, 0.1);
+            color: var(--color-primary);
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .event-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-meta-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .event-city {
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            background: rgba(33, 128, 141, 0.1);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--color-surface);
+            border-radius: 16px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-heavy);
+            animation: slideUp 0.3s;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            padding-right: 50px;
+        }
+
+        .modal-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        #modalImage {
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+        }
+
+        #modalImage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-section-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-section-content {
+            font-size: 1.1rem;
+            color: var(--color-text);
+        }
+
+        .modal-description {
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .modal-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .modal-link:hover {
+            background: var(--color-primary-hover);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--color-primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+        }
+
+        .no-events {
+            text-align: center;
+            padding: 3rem;
+            background: var(--color-surface);
+            border-radius: 16px;
+            color: var(--color-text-secondary);
+        }
+
+footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+        @media (max-width: 768px) {
+        .nav-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+        }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <h1>🎉 SETX Events</h1>
+        <p>Discover What's Happening in Southeast Texas</p>
+    </header>
+
+    <div class="container">
+        <div id="events" class="filters">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="cityFilter">City</label>
+                    <select id="cityFilter">
+                        <option value="all">All Cities</option>
+                        <option value="Beaumont">Beaumont</option>
+                        <option value="Port Arthur">Port Arthur</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Nederland">Nederland</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="categoryFilter">Category</label>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="searchInput">Search</label>
+                    <input type="text" id="searchInput" placeholder="Search events...">
+                </div>
+            </div>
+        </div>
+
+        <div id="eventsContainer" class="events-grid">
+            <div class="loading"><div class="spinner"></div><p>Loading events...</p></div>
+        </div>
+    </div>
+
+    <!-- Event Detail Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-badges" id="modalBadges"></div>
+            </div>
+            <div id="modalImage"></div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <div class="modal-section-title">When</div>
+                    <div class="modal-section-content" id="modalDate"></div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-title">Where</div>
+                    <div class="modal-section-content" id="modalLocation"></div>
+                </div>
+
+                <div class="modal-section" id="modalDescriptionSection">
+                    <div class="modal-section-title">About This Event</div>
+                    <div class="modal-description" id="modalDescription"></div>
+                </div>
+
+                <div id="modalSourceLink"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://100.104.226.70:3001/api/events';
+        let allEvents = [];
+        let categories = new Set();
+
+        // Fetch events from API
+        async function fetchEvents() {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+            return fetch(API_URL, { signal: controller.signal })
+                .then(response => {
+                    clearTimeout(timeoutId);
+                    if (!response.ok) throw new Error("API request failed");
+                    return response.json();
+                })
+                .then(data => {
+                    allEvents = data;
+                    
+                    // Extract unique categories
+                    allEvents.forEach(event => {
+                        if (event.category) categories.add(event.category);
+                    });
+                    
+                    populateCategoryFilter();
+                    displayEvents(allEvents);
+                })
+                .catch(error => {
+                    clearTimeout(timeoutId);
+                    console.error("Error fetching events:", error);
+                    if (error.name === "AbortError") {
+                        document.getElementById("eventsContainer").innerHTML = `
+                            <div class="no-events">
+                                <h3>Loading timed out</h3>
+                                <p>The API took too long to respond. Please check your connection or try again later.</p>
+                                <p>API URL: ${API_URL}</p>
+                            </div>
+                        `;
+                    } else {
+                        document.getElementById("eventsContainer").innerHTML = `
+                            <div class="no-events">
+                                <h3>Unable to load events</h3>
+                                <p>Please check that the API server is running at ${API_URL}</p>
+                                <p>Error: ${error.message}</p>
+                            </div>
+                        `;
+                    }
+                });
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error('API request failed');
+                allEvents = (await response.json()).slice(0, 50);
+                
+                // Extract unique categories
+                allEvents.forEach(event => {
+                    if (event.category) categories.add(event.category);
+                });
+                
+                populateCategoryFilter();
+                displayEvents(allEvents);
+            } catch (error) {
+                console.error('Error fetching events:', error);
+                document.getElementById('eventsContainer').innerHTML = `
+                    <div class="no-events">
+                        <h3>Unable to load events</h3>
+                        <p>Please check that the API server is running at ${API_URL}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Populate category filter
+        function populateCategoryFilter() {
+            const categoryFilter = document.getElementById('categoryFilter');
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categoryFilter.appendChild(option);
+            });
+        }
+
+        // Display events
+        function displayEvents(events) {
+            const container = document.getElementById('eventsContainer');
+            
+            if (events.length === 0) {
+                container.innerHTML = `
+                    <div class="no-events">
+                        <h3>No events found</h3>
+                        <p>Try adjusting your filters or check back later for new events.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = events.map(event => `
+                <div class="event-card ${event.featured ? 'featured' : ''}" onclick="showEventDetail(${event.id})">
+                    ${event.image_url ? `<img src="${event.image_url}" alt="${event.title}" class="event-image">` : '<div class="event-image-placeholder">No Image</div>'}
+                    ${event.featured ? '<span class="event-badge badge-featured">⭐ Featured</span>' : ''}
+                    <span class="event-badge badge-category">${event.category || 'Event'}</span>
+
+                    <h3 class="event-title">${event.title}</h3>
+                    
+                    <div class="event-meta">
+                        <div class="event-meta-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>${formatDate(event.date)}${event.time ? ' • ' + event.time : ''}</span>
+                        </div>
+                        
+                        ${event.location ? `
+                        <div class="event-meta-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>${event.location}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                    
+                    <span class="event-city">${event.city}</span>
+                </div>
+            `).join('');
+        }
+
+        // Show event detail modal
+        function showEventDetail(eventId) {
+            const event = allEvents.find(e => e.id === eventId);
+            if (!event) return;
+
+            document.getElementById('modalTitle').textContent = event.title;
+
+            // Image
+            const imageContainer = document.getElementById('modalImage');
+            if (event.image_url) {
+                imageContainer.innerHTML = `<img src="${event.image_url}" alt="${event.title}">`;
+            } else {
+                imageContainer.innerHTML = '';
+            }
+
+            // Badges
+            const badges = [];
+            if (event.featured) badges.push('<span class="event-badge badge-featured">⭐ Featured</span>');
+            badges.push(`<span class="event-badge badge-category">${event.category || 'Event'}</span>`);
+            document.getElementById('modalBadges').innerHTML = badges.join('');
+            
+            // Date and time
+            let dateText = formatDate(event.date);
+            if (event.time) dateText += ' at ' + event.time;
+            document.getElementById('modalDate').textContent = dateText;
+            
+            // Location
+            let locationText = event.location || 'Location TBA';
+            if (event.city) locationText += `, ${event.city}`;
+            document.getElementById('modalLocation').textContent = locationText;
+            
+            // Description
+            const descSection = document.getElementById('modalDescriptionSection');
+            if (event.description) {
+                descSection.style.display = 'block';
+                document.getElementById('modalDescription').textContent = event.description;
+            } else {
+                descSection.style.display = 'none';
+            }
+            
+            // Source link
+            const sourceLinkContainer = document.getElementById('modalSourceLink');
+            if (event.source_url) {
+                sourceLinkContainer.innerHTML = `
+                    <a href="${event.source_url}" target="_blank" class="modal-link">
+                        View Event Source →
+                    </a>
+                `;
+            } else {
+                sourceLinkContainer.innerHTML = '';
+            }
+            
+            // Show modal
+            document.getElementById('eventModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('eventModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        document.getElementById('eventModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString + 'T00:00:00');
+            return date.toLocaleDateString('en-US', { 
+                weekday: 'short', 
+                month: 'short', 
+                day: 'numeric',
+                year: 'numeric'
+            });
+        }
+
+        // Filter events
+        function filterEvents() {
+            const city = document.getElementById('cityFilter').value;
+            const category = document.getElementById('categoryFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+
+            let filtered = allEvents;
+
+            if (city !== 'all') {
+                filtered = filtered.filter(e => e.city === city);
+            }
+
+            if (category !== 'all') {
+                filtered = filtered.filter(e => e.category === category);
+            }
+
+            if (search) {
+                filtered = filtered.filter(e => 
+                    e.title.toLowerCase().includes(search) ||
+                    (e.description && e.description.toLowerCase().includes(search)) ||
+                    (e.location && e.location.toLowerCase().includes(search))
+                );
+            }
+
+            displayEvents(filtered);
+        }
+
+        // Event listeners
+        document.getElementById('cityFilter').addEventListener('change', filterEvents);
+        document.getElementById('categoryFilter').addEventListener('change', filterEvents);
+        document.getElementById('searchInput').addEventListener('input', filterEvents);
+
+        // Initial load
+        fetchEvents();
+    <script>
+        // Navigation active state
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach(link => {
+            link.addEventListener("click", function() {
+                navLinks.forEach(l => l.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    </script>
+    <script>
+        // Navigation active state
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll(".nav-link");
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    this.classList.add("active");
+                    // Scroll to section if needed
+                    const target = this.getAttribute("href");
+                    if (target.startsWith("#")) {
+                        const element = document.querySelector(target);
+                        if (element) element.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            });
+        });
+    </script>
+    </script>
+    <script>
+        // Navigation active state
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll(".nav-link");
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    this.classList.add("active");
+                    // Scroll to section if needed
+                    const target = this.getAttribute("href");
+                    if (target.startsWith("#")) {
+                        const element = document.querySelector(target);
+                        if (element) element.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            });
+        });
+    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SETX Events. Discover Southeast Texas happenings.</p>
+        </div>
+    </footer>
+</body>
+</html>
