@@ -567,7 +567,7 @@
                             </svg>
                             <span>${formatDate(event.date)}${isRecurring ? ' (begins)' : ''}${event.time ? ' • ' + event.time : ''}</span>
                         </div>
-                        
+
                         ${event.location ? `
                         <div class="event-meta-item">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -578,10 +578,11 @@
                         </div>
                         ` : ''}
                     </div>
-                    
+
                     <span class="event-city">${event.city}</span>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         // Show event detail modal
