@@ -94,24 +94,43 @@ app.get('/api/health', (req, res) => {
 
 app.get('/api/events', (req, res) => {
     const { city, category, search } = req.query;
-    let query = "SELECT * FROM events WHERE date >= date('now')";
+    let query = `
+        SELECT
+            e.*,
+            COALESCE(
+                CASE
+                    WHEN e.image_url IS NOT NULL AND e.image_url != ''
+                         AND e.image_url NOT LIKE '%placehold%'
+                    THEN e.image_url
+                    WHEN v.cover_image_url IS NOT NULL AND v.cover_image_url != ''
+                    THEN v.cover_image_url
+                    WHEN v.logo_url IS NOT NULL AND v.logo_url != ''
+                    THEN v.logo_url
+                    ELSE e.image_url
+                END,
+                e.image_url
+            ) as image_url
+        FROM events e
+        LEFT JOIN venues v ON e.venue_id = v.id
+        WHERE e.date >= date('now')
+    `;
     const params = [];
-    
+
     if (city && city !== 'all') {
-        query += ' AND city = ?';
+        query += ' AND e.city = ?';
         params.push(city);
     }
     if (category && category !== 'all') {
-        query += ' AND category = ?';
+        query += ' AND e.category = ?';
         params.push(category);
     }
     if (search) {
-        query += ' AND (title LIKE ? OR description LIKE ? OR location LIKE ?)';
+        query += ' AND (e.title LIKE ? OR e.description LIKE ? OR e.location LIKE ?)';
         const searchTerm = `%${search}%`;
         params.push(searchTerm, searchTerm, searchTerm);
     }
-    query += ' ORDER BY date ASC';
-    
+    query += ' ORDER BY e.date ASC';
+
     db.all(query, params, (err, rows) => {
         if (err) {
             console.error('Error fetching events:', err.message);
@@ -124,7 +143,26 @@ app.get('/api/events', (req, res) => {
 
 app.get('/api/events/:id', (req, res) => {
     const { id } = req.params;
-    db.get('SELECT * FROM events WHERE id = ?', [id], (err, row) => {
+    db.get(`
+        SELECT
+            e.*,
+            COALESCE(
+                CASE
+                    WHEN e.image_url IS NOT NULL AND e.image_url != ''
+                         AND e.image_url NOT LIKE '%placehold%'
+                    THEN e.image_url
+                    WHEN v.cover_image_url IS NOT NULL AND v.cover_image_url != ''
+                    THEN v.cover_image_url
+                    WHEN v.logo_url IS NOT NULL AND v.logo_url != ''
+                    THEN v.logo_url
+                    ELSE e.image_url
+                END,
+                e.image_url
+            ) as image_url
+        FROM events e
+        LEFT JOIN venues v ON e.venue_id = v.id
+        WHERE e.id = ?
+    `, [id], (err, row) => {
         if (err) {
             res.status(500).json({ error: err.message });
         } else if (!row) {
@@ -142,31 +180,55 @@ app.post('/api/events', (req, res) => {
         return res.status(400).json({ error: 'Title, date, and city are required' });
     }
 
-    const stmt = db.prepare(`
-        INSERT INTO events (title, date, time, location, city, category, description, source_url, featured, image_url, price, ticket_url, age_restriction, venue_id)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
-
-    stmt.run(
-        title, date, time || '', location || '', city,
-        category || 'Community Event', description || '',
-        source_url || '', featured || 0,
-        image_url || null, price || null, ticket_url || null, age_restriction || null, venue_id || null,
-        function(err) {
+    // Check for duplicates: (title, date, city)
+    db.get(
+        `SELECT id FROM events WHERE LOWER(TRIM(title)) = LOWER(TRIM(?)) AND date = ? AND city = ?`,
+        [title, date, city],
+        (err, existingEvent) => {
             if (err) {
-                console.error('Error creating event:', err.message);
-                res.status(500).json({ error: err.message });
-            } else {
-                console.log(`✅ Event created: ${title} (ID: ${this.lastID})`);
-                res.status(201).json({
-                    id: this.lastID,
-                    message: 'Event created successfully',
-                    title: title
+                console.error('Error checking for duplicates:', err.message);
+                return res.status(500).json({ error: 'Database error: ' + err.message });
+            }
+
+            if (existingEvent) {
+                // Duplicate detected - return existing event instead of creating new one
+                console.log(`⚠️  Duplicate event detected: ${title} on ${date} in ${city} (ID: ${existingEvent.id})`);
+                return res.status(409).json({
+                    id: existingEvent.id,
+                    message: 'Event already exists (duplicate prevented)',
+                    title: title,
+                    isDuplicate: true
                 });
             }
+
+            // No duplicate - proceed with insert
+            const stmt = db.prepare(`
+                INSERT INTO events (title, date, time, location, city, category, description, source_url, featured, image_url, price, ticket_url, age_restriction, venue_id)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            `);
+
+            stmt.run(
+                title, date, time || '', location || '', city,
+                category || 'Community Event', description || '',
+                source_url || '', featured || 0,
+                image_url || null, price || null, ticket_url || null, age_restriction || null, venue_id || null,
+                function(err) {
+                    if (err) {
+                        console.error('Error creating event:', err.message);
+                        res.status(500).json({ error: err.message });
+                    } else {
+                        console.log(`✅ Event created: ${title} (ID: ${this.lastID})`);
+                        res.status(201).json({
+                            id: this.lastID,
+                            message: 'Event created successfully',
+                            title: title
+                        });
+                    }
+                }
+            );
+            stmt.finalize();
         }
     );
-    stmt.finalize();
 });
 
 app.put('/api/events/:id', (req, res) => {
